@@ -1,6 +1,15 @@
 # OPSIIE 0.3.79 XP Pastel
 
-![OPSIIE Splash](https://github.com/ARPAHLS/OPSIE/blob/main/opsiie%20splash.png)
+```
+ ███             ███████    ███████████   █████████  █████ █████ ██████████
+░░░███         ███░░░░░███ ░░███░░░░░███ ███░░░░░███░░███ ░░███ ░░███░░░░░█
+  ░░░███      ███     ░░███ ░███    ░███░███    ░░░  ░███  ░███  ░███  █ ░ 
+    ░░░███   ░███      ░███ ░██████████ ░░█████████  ░███  ░███  ░██████   
+     ███░    ░███      ░███ ░███░░░░░░   ░░░░░░░░███ ░███  ░███  ░███░░█   
+   ███░      ░░███     ███  ░███         ███    ░███ ░███  ░███  ░███ ░   █
+ ███░         ░░░███████░   █████       ░░█████████  █████ █████ ██████████
+░░░             ░░░░░░░    ░░░░░         ░░░░░░░░░  ░░░░░ ░░░░░ ░░░░░░░░░░ 
+```
 
 **A Self-Centered Intelligence (SCI) Prototype**  
 *By ARPA HELLENIC LOGICAL SYSTEMS | Version: 0.3.79 XP | 01 JUL 2025*
@@ -203,6 +212,7 @@ OPSIIE is designed to be more than just an AI assistant - it's a digital compani
 ```bash
 python OPSIIE_0_3_79_XP.py
 ```
+![OPSIIE Splash](https://github.com/ARPAHLS/OPSIE/blob/main/opsiie%20splash.png)
 
 The system will:
 1. Display the ARPA splash screen
