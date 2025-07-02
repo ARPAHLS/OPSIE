@@ -1,4 +1,4 @@
-# OPSIIE 0.3.77 SP Voice - Requirements
+# OPSIIE 0.3.79 XP Pastel - Requirements
 # A Self-Centered Intelligence (SCI) Prototype
 # By ARPA HELLENIC LOGICAL SYSTEMS
 
