@@ -1,5 +1,7 @@
 # OPSIIE 0.3.79 XP Pastel
 
+![OPSIIE Splash](https://github.com/ARPAHLS/OPSIE/blob/main/opsiie%20splash.png)
+
 **A Self-Centered Intelligence (SCI) Prototype**  
 *By ARPA HELLENIC LOGICAL SYSTEMS | Version: 0.3.79 XP | 01 JUL 2025*
 
@@ -86,76 +88,27 @@ OPSIIE is designed to be more than just an AI assistant - it's a digital compani
 
 ### 📦 Dependencies
 
-#### **Core AI and Machine Learning**
-![PyTorch](https://img.shields.io/badge/PyTorch-2.0.0+-red.svg)
-![Transformers](https://img.shields.io/badge/Transformers-4.30.0+-blue.svg)
-![Diffusers](https://img.shields.io/badge/Diffusers-0.21.0+-green.svg)
-![Accelerate](https://img.shields.io/badge/Accelerate-0.20.0+-orange.svg)
+| **AI & ML** | **Computer Vision** | **Audio & Voice** | **Web3 & Blockchain** |
+|-------------|-------------------|------------------|---------------------|
+| ![PyTorch](https://img.shields.io/badge/PyTorch-2.0.0+-red.svg) | ![OpenCV](https://img.shields.io/badge/OpenCV-4.8.0+-blue.svg) | ![Librosa](https://img.shields.io/badge/Librosa-0.10.0+-purple.svg) | ![Web3](https://img.shields.io/badge/Web3-6.0.0+-yellow.svg) |
+| ![Transformers](https://img.shields.io/badge/Transformers-4.30.0+-blue.svg) | ![Face Recognition](https://img.shields.io/badge/Face_Recognition-1.3.0+-green.svg) | ![TorchAudio](https://img.shields.io/badge/TorchAudio-2.0.0+-red.svg) | ![Requests](https://img.shields.io/badge/Requests-2.31.0+-green.svg) |
+| ![Diffusers](https://img.shields.io/badge/Diffusers-0.21.0+-green.svg) | ![DeepFace](https://img.shields.io/badge/DeepFace-0.0.79+-red.svg) | ![PyAudio](https://img.shields.io/badge/PyAudio-0.2.11+-blue.svg) | |
+| ![Accelerate](https://img.shields.io/badge/Accelerate-0.20.0+-orange.svg) | ![Pillow](https://img.shields.io/badge/Pillow-10.0.0+-orange.svg) | ![Speech Recognition](https://img.shields.io/badge/Speech_Recognition-3.10.0+-green.svg) | |
 
-#### **Audio Processing**
-![Librosa](https://img.shields.io/badge/Librosa-0.10.0+-purple.svg)
-![TorchAudio](https://img.shields.io/badge/TorchAudio-2.0.0+-red.svg)
-![PyAudio](https://img.shields.io/badge/PyAudio-0.2.11+-blue.svg)
-![Speech Recognition](https://img.shields.io/badge/Speech_Recognition-3.10.0+-green.svg)
-![pyttsx3](https://img.shields.io/badge/pyttsx3-2.90+-orange.svg)
+| **Data & Analytics** | **Database & Storage** | **Document Processing** | **Scientific Computing** |
+|---------------------|----------------------|----------------------|------------------------|
+| ![Pandas](https://img.shields.io/badge/Pandas-2.0.0+-blue.svg) | ![Psycopg](https://img.shields.io/badge/Psycopg-3.1.0+-blue.svg) | ![PyPDF2](https://img.shields.io/badge/PyPDF2-3.0.0+-red.svg) | ![BioPython](https://img.shields.io/badge/BioPython-1.81+-green.svg) |
+| ![NumPy](https://img.shields.io/badge/NumPy-1.24.0+-orange.svg) | ![ChromaDB](https://img.shields.io/badge/ChromaDB-0.4.0+-green.svg) | ![pdfplumber](https://img.shields.io/badge/pdfplumber-0.9.0+-blue.svg) | ![Matplotlib](https://img.shields.io/badge/Matplotlib-3.7.0+-blue.svg) |
+| ![SciPy](https://img.shields.io/badge/SciPy-1.10.0+-purple.svg) | | ![python-docx](https://img.shields.io/badge/python--docx-0.8.11+-green.svg) | ![PrettyTable](https://img.shields.io/badge/PrettyTable-3.8.0+-orange.svg) |
+| ![yfinance](https://img.shields.io/badge/yfinance-0.2.18+-green.svg) | | ![BeautifulSoup4](https://img.shields.io/badge/BeautifulSoup4-4.12.0+-orange.svg) | ![ViennaRNA](https://img.shields.io/badge/ViennaRNA-2.6.4+-red.svg) |
+| ![Statsmodels](https://img.shields.io/badge/Statsmodels-0.14.0+-blue.svg) | | ![lxml](https://img.shields.io/badge/lxml-4.9.0+-green.svg) | |
 
-#### **Computer Vision and Image Processing**
-![OpenCV](https://img.shields.io/badge/OpenCV-4.8.0+-blue.svg)
-![Face Recognition](https://img.shields.io/badge/Face_Recognition-1.3.0+-green.svg)
-![DeepFace](https://img.shields.io/badge/DeepFace-0.0.79+-red.svg)
-![Pillow](https://img.shields.io/badge/Pillow-10.0.0+-orange.svg)
-
-#### **Web3 and Blockchain**
-![Web3](https://img.shields.io/badge/Web3-6.0.0+-yellow.svg)
-![Requests](https://img.shields.io/badge/Requests-2.31.0+-green.svg)
-
-#### **Data Processing and Analysis**
-![Pandas](https://img.shields.io/badge/Pandas-2.0.0+-blue.svg)
-![NumPy](https://img.shields.io/badge/NumPy-1.24.0+-orange.svg)
-![SciPy](https://img.shields.io/badge/SciPy-1.10.0+-purple.svg)
-![yfinance](https://img.shields.io/badge/yfinance-0.2.18+-green.svg)
-![Statsmodels](https://img.shields.io/badge/Statsmodels-0.14.0+-blue.svg)
-
-#### **Database and Vector Storage**
-![Psycopg](https://img.shields.io/badge/Psycopg-3.1.0+-blue.svg)
-![ChromaDB](https://img.shields.io/badge/ChromaDB-0.4.0+-green.svg)
-
-#### **Document Processing**
-![PyPDF2](https://img.shields.io/badge/PyPDF2-3.0.0+-red.svg)
-![pdfplumber](https://img.shields.io/badge/pdfplumber-0.9.0+-blue.svg)
-![python-docx](https://img.shields.io/badge/python--docx-0.8.11+-green.svg)
-
-#### **Web Scraping and HTML Processing**
-![BeautifulSoup4](https://img.shields.io/badge/BeautifulSoup4-4.12.0+-orange.svg)
-![lxml](https://img.shields.io/badge/lxml-4.9.0+-green.svg)
-
-#### **Audio and Multimedia**
-![Pygame](https://img.shields.io/badge/Pygame-2.5.0+-purple.svg)
-
-#### **Scientific Computing and Bioinformatics**
-![BioPython](https://img.shields.io/badge/BioPython-1.81+-green.svg)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-3.7.0+-blue.svg)
-![PrettyTable](https://img.shields.io/badge/PrettyTable-3.8.0+-orange.svg)
-![ViennaRNA](https://img.shields.io/badge/ViennaRNA-2.6.4+-red.svg)
-
-#### **API and Web Services**
-![aiohttp](https://img.shields.io/badge/aiohttp-3.8.0+-green.svg)
-![WebSockets](https://img.shields.io/badge/WebSockets-11.0.0+-blue.svg)
-![Google Generative AI](https://img.shields.io/badge/Google_Generative_AI-0.3.0+-orange.svg)
-
-#### **Email and Communication**
-![imaplib2](https://img.shields.io/badge/imaplib2-3.6+-blue.svg)
-
-#### **Utilities and Configuration**
-![python-dotenv](https://img.shields.io/badge/python--dotenv-1.0.0+-green.svg)
-![Colorama](https://img.shields.io/badge/Colorama-0.4.6+-blue.svg)
-![tqdm](https://img.shields.io/badge/tqdm-4.65.0+-green.svg)
-![ratelimit](https://img.shields.io/badge/ratelimit-2.2.1+-orange.svg)
-
-#### **Development and Testing**
-![pytest](https://img.shields.io/badge/pytest-7.4.0+-green.svg)
-![Black](https://img.shields.io/badge/Black-23.0.0+-black.svg)
-![Flake8](https://img.shields.io/badge/Flake8-6.0.0+-blue.svg)
+| **Web Services** | **Multimedia** | **Utilities** | **Development** |
+|-----------------|---------------|---------------|----------------|
+| ![aiohttp](https://img.shields.io/badge/aiohttp-3.8.0+-green.svg) | ![Pygame](https://img.shields.io/badge/Pygame-2.5.0+-purple.svg) | ![python-dotenv](https://img.shields.io/badge/python--dotenv-1.0.0+-green.svg) | ![pytest](https://img.shields.io/badge/pytest-7.4.0+-green.svg) |
+| ![WebSockets](https://img.shields.io/badge/WebSockets-11.0.0+-blue.svg) | | ![Colorama](https://img.shields.io/badge/Colorama-0.4.6+-blue.svg) | ![Black](https://img.shields.io/badge/Black-23.0.0+-black.svg) |
+| ![Google Generative AI](https://img.shields.io/badge/Google_Generative_AI-0.3.0+-orange.svg) | | ![tqdm](https://img.shields.io/badge/tqdm-4.65.0+-green.svg) | ![Flake8](https://img.shields.io/badge/Flake8-6.0.0+-blue.svg) |
+| ![imaplib2](https://img.shields.io/badge/imaplib2-3.6+-blue.svg) | | ![ratelimit](https://img.shields.io/badge/ratelimit-2.2.1+-orange.svg) | ![pyttsx3](https://img.shields.io/badge/pyttsx3-2.90+-orange.svg) |
 
 ### Environment Setup
 
