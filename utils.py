@@ -161,8 +161,9 @@ def get_agent_intro(agent_name, room_prompt, user_name="User"):
 
 '''
 
-# 0.3.75 update
+# 0.3.75 update 01 JUL 2025
 
+# new pastel color scheme
 # new /0x command, which allows you to interact with the blockchain, includes old send and receive commands and new buy, sell, and trade commands.
 # new /video command, which allows you to generate videos based on a text description.
 # enhanced DNA command, now it creates full blown reports and is able to handle more complex requests.

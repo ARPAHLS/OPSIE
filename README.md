@@ -1,7 +1,7 @@
-# OPSIIE 0.3.77 SP Voice
+# OPSIIE 0.3.79 XP Pastel
 
 **A Self-Centered Intelligence (SCI) Prototype**  
-*By ARPA HELLENIC LOGICAL SYSTEMS | Version: 0.3.77 SP | 28 APR 2025*
+*By ARPA HELLENIC LOGICAL SYSTEMS | Version: 0.3.79 XP | 01 JUL 2025*
 
 ---
 
@@ -88,8 +88,8 @@ OPSIIE is designed to be more than just an AI assistant - it's a digital compani
 
 1. **Clone the Repository**
    ```bash
-   git clone <repository-url>
-   cd OPSIIE_0_3_77_SP_Voice
+   git clone <github.com/arpahls/opsie>
+   cd OPSIIE_0_3_79_XP_Pastel
    ```
 
 2. **Install Dependencies**
@@ -175,7 +175,7 @@ OPSIIE is designed to be more than just an AI assistant - it's a digital compani
 ### 🚀 Starting OPSIIE
 
 ```bash
-python OPSIIE_0_3_77_SP.py
+python OPSIIE_0_3_79_XP.py
 ```
 
 The system will:
@@ -362,7 +362,7 @@ The system will:
 
 ### **Core Components**
 
-#### **Main System (OPSIIE_0_3_77_SP.py)**
+#### **Main System (OPSIIE_0_3_79_XP.py)**
 - Primary interface and command processing
 - Voice and facial recognition integration
 - System initialization and boot sequence
@@ -389,8 +389,8 @@ The system will:
 ### **Module Structure**
 
 ```
-OPSIIE_0_3_77_SP_Voice/
-├── OPSIIE_0_3_77_SP.py      # Main system
+OPSIIE_0_3_79_XP_Pastel/
+├── OPSIIE_0_3_79_XP.py      # Main system
 ├── utils.py                  # Utilities and system prompt
 ├── kun.py                    # User management
 ├── help.py                   # Help system
@@ -479,7 +479,7 @@ python -c "import torch; print(torch.cuda.is_available())"
 ### **ARPA Corporation**
 - **Copyright**: © 2024-2025 ARPA Hellenic Logical Systems
 - **License**: Proprietary - All rights reserved
-- **Contact**: opsiebyarpa@gmail.com
+- **Contact**: input@arpacorp.net
 - **Website**: https://arpacorp.net | https://arpa.systems
 
 ### **Usage Terms**

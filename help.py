@@ -18,7 +18,7 @@ def display_help():
          ██████  ██      ███████ ██ ██ ███████ 
                                                              
         A Self-Centered Intelligence (SCI) Prototype 
-        By ARPA HELLENIC LOGICAL SYSTEMS | Version: 0.3.77 SP | 28 APR 2025
+        By ARPA HELLENIC LOGICAL SYSTEMS | Version: 0.3.79 XP | 01 JUL 2025
     """)
     time.sleep(1)
 

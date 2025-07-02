@@ -115,7 +115,7 @@ def send_mail(prompt):
         <p style="font-size: 12px; color: #0000FF; margin: 8px 0; text-align: center;">
             A Self-Centered Intelligence (SCI) Prototype<br>
             By ARPA HELLENIC LOGICAL SYSTEMS<br>
-            Version: 0.3.77 SP | 28 APR 2025
+            Version: 0.3.79 XP | 01 JUL 2025
         </p>
         
         <!-- Divider symbol -->
@@ -243,7 +243,7 @@ def display_unread_inbox(inbox):
     █▀▄▀█ ▄▀█ █ █     █▀ █▀▀ █▀█ █ █ █ █▀▀ █▀▀
     █ ▀ █ █▀█ █ █▄▄   ▄█ ██▄ █▀▄ ▀▄▀ █ █▄▄ ██▄
                                           
-              v0.3.70 XP | ARPA CORP, 2024
+              v0.3.79 XP | ARPA CORP, 2025
     """)
     print(Fore.LIGHTCYAN_EX + "═" * 80)
     
