@@ -220,7 +220,9 @@ The system will:
 3. Initialize all AI models and systems
 4. Present the interactive interface
 
-### 🎯 Core Commands
+### 🎯 Core System Commands
+
+These commands can be used at any time during your interaction with OPSIIE. When in voice mode, natural language processing automatically detects command intent and executes the appropriate functions. All commands support both text input and voice activation.
 
 #### **Memory & Recall**
 ```bash
