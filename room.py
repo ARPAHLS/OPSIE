@@ -13,7 +13,7 @@ from agentic_network import ask_model, get_agent_description
 from utils import get_system_prompt, get_agent_display_names
 from kun import known_user_names
 
-ROOMS_DIR = r"E:\Agents\OPSIIE_Generated_Rooms"
+ROOMS_DIR = os.path.join(os.path.dirname(__file__), 'outputs', 'rooms')
 os.makedirs(ROOMS_DIR, exist_ok=True)
 
 # Get the display names at module level

@@ -43,6 +43,10 @@ from dotenv import load_dotenv
 import json
 import yfinance as yf
 
+# Import color functions from terminal_colors
+from terminal_colors import (
+    pastel_color, pastel_lilac, pastel_pink, pastel_green, pastel_yellow, pastel_blue, pastel_red, pastel_cyan, pastel_magenta, pastel_white, pastel_gray, pastel_light_white, pastel_gradient_bar, set_palette, PASTEL, VIBRANT, select_theme
+)
 
 # Native Modules
 from utils import (
@@ -74,57 +78,6 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 #  \___|____\___/|___/_/ \_\____|                                
 # *** GLOBAL Settings *** | Initialization | Mode | System Prompt
 
-def pastel_color(r, g, b, text):
-    return f"\033[38;2;{r};{g};{b}m{text}\033[0m"
-
-def pastel_lilac(text):
-    return pastel_color(200, 160, 255, text)
-
-def pastel_pink(text):
-    return pastel_color(255, 200, 200, text)
-
-def pastel_green(text):
-    return pastel_color(180, 255, 210, text)
-
-def pastel_yellow(text):
-    return pastel_color(255, 245, 180, text)
-
-def pastel_blue(text):
-    return pastel_color(180, 220, 255, text)
-
-def pastel_red(text):
-    return pastel_color(255, 180, 180, text)
-
-def pastel_cyan(text):
-    return pastel_color(180, 255, 255, text)
-
-def pastel_magenta(text):
-    return pastel_color(240, 180, 255, text)
-
-def pastel_white(text):
-    return pastel_color(245, 245, 255, text)
-
-def pastel_gray(text):
-    return pastel_color(220, 210, 230, text)
-
-def pastel_gradient_bar(progress, total, length=40):
-    start_color = (200, 160, 255)
-    end_color = (255, 200, 200)
-    bar = ''
-    for i in range(length):
-        ratio = i / (length - 1)
-        r = int(start_color[0] + (end_color[0] - start_color[0]) * ratio)
-        g = int(start_color[1] + (end_color[1] - start_color[1]) * ratio)
-        b = int(start_color[2] + (end_color[2] - start_color[2]) * ratio)
-        if i < int(length * progress / total):
-            bar += f'\033[38;2;{r};{g};{b}m█\033[0m'
-        else:
-            bar += f'\033[38;2;{r};{g};{b}m░\033[0m'
-    return bar
-
-def pastel_light_white(text):
-    return pastel_color(245, 245, 255, text)
-
 def print_opsiie_logo_gradient():
     logo = [
         " ███             ███████    ███████████   █████████  █████ █████ ██████████",
@@ -136,9 +89,10 @@ def print_opsiie_logo_gradient():
         " ███░         ░░░███████░   █████       ░░█████████  █████ █████ ██████████",
         "░░░             ░░░░░░░    ░░░░░         ░░░░░░░░░  ░░░░░ ░░░░░ ░░░░░░░░░░ "
     ]
-    # Gradient from pastel lilac (200,160,255) to pastel pink/peach (255,200,200)
-    start_color = (200, 160, 255)
-    end_color = (255, 200, 200)
+    # Gradient from lilac to pink in the active palette
+    from terminal_colors import _active_palette
+    start_color = _active_palette['lilac']
+    end_color = _active_palette['pink']
     steps = max(len(line) for line in logo)
     def get_gradient_color(i, total):
         r = int(start_color[0] + (end_color[0] - start_color[0]) * i / total)
@@ -157,7 +111,9 @@ def display_splash():
     # Initialize the pygame mixer
     pygame.mixer.init()
     try:
-        pygame.mixer.music.load (r'E:\Agents\Test 1\opsiieboot.mp3')
+        # Dynamically construct the path to system_sounds/opsiieboot.mp3
+        sound_path = os.path.join(os.path.dirname(__file__), 'system_sounds', 'opsiieboot.mp3')
+        pygame.mixer.music.load(sound_path)
         pygame.mixer.music.play()
     except Exception as e:
         print(pastel_red(f"Error fetching opsiieboot.mp3: {str(e)}"))
@@ -364,121 +320,6 @@ def speak_response(text):
         print(pastel_red(f"Error with Eleven Labs API: {response.status_code}"))
         print(pastel_red(response.text))
 
-# List of spoken reference keywords and phrases
-custom_words = {
-    "Opsie": [r'E:\\Agents\\Test 1\\opsie.mp3'],
-    "Voice off": [r'E:\\Agents\\Test 1\\voiceoff.mp3'],
-    "send Base Degen": [
-        r'E:\\Agents\\Test 1\\sendbasedegen.mp3',
-        r'E:\\Agents\\Test 1\\sendbasedegen2.mp3',
-        r'E:\\Agents\\Test 1\\sendbasedegen3.mp3'
-    ],
-    "20 to Ross": [
-        r'E:\\Agents\\Test 1\\20toross.mp3',
-        r'E:\\Agents\\Test 1\\20toross2.mp3',
-        r'E:\\Agents\\Test 1\\20toross3.mp3'
-    ],
-    "50 to Ross": [
-        r'E:\\Agents\\Test 1\\50toross.mp3',
-        r'E:\\Agents\\Test 1\\50toross2.mp3',
-        r'E:\\Agents\\Test 1\\50toross3.mp3'
-    ]
-}
-
-# Load and preprocess the reference sounds
-def load_custom_sounds(custom_words):
-    """Loads custom sounds as MFCCs."""
-    loaded_sounds = {}
-    for word, paths in custom_words.items():
-        loaded_sounds[word] = []
-        for path in paths:
-            try:
-                audio_data, sr = librosa.load(path, sr=None)
-                mfcc = librosa.feature.mfcc(y=audio_data, sr=sr)
-                mfcc = pad_or_trim_mfcc(mfcc, MFCC_TARGET_LENGTH)
-                loaded_sounds[word].append(mfcc)
-            except Exception as e:
-                print(f"Error loading {word} from {path}: {e}")
-    return loaded_sounds
-
-# Helper function to ensure MFCCs are of a consistent length
-def pad_or_trim_mfcc(mfcc, target_length=MFCC_TARGET_LENGTH):
-    """
-    Ensure that the MFCC or audio data array has a consistent length.
-    Pads or trims the MFCC to the target length.
-    """
-    if mfcc.shape[1] > target_length:
-        return mfcc[:, :target_length]
-    elif mfcc.shape[1] < target_length:
-        # Pad with zeros if it's shorter than the target length
-        return np.pad(mfcc, ((0, 0), (0, target_length - mfcc.shape[1])), mode='constant')
-    return mfcc
-
-def calculate_audio_similarity(voice_text_audio, sound_data_audio):
-    """Calculate audio similarity using cosine distance of MFCCs."""
-    mfcc_voice_text = librosa.feature.mfcc(y=voice_text_audio, sr=16000, n_mfcc=13)
-    mfcc_sound_data = librosa.feature.mfcc(y=sound_data_audio, sr=16000, n_mfcc=13)
-
-    # Flatten the MFCCs
-    mfcc_voice_text_flat = mfcc_voice_text.flatten()
-    mfcc_sound_data_flat = mfcc_sound_data.flatten()
-
-    # Calculate cosine similarity
-    similarity = 0.65 - cosine(mfcc_voice_text_flat, mfcc_sound_data_flat)
-    return similarity
-
-# Match input audio with preloaded custom sounds
-def match_custom_word(input_audio, custom_sounds, threshold=0.1):
-    """Matches input audio against custom word sounds and returns the recognized word."""
-    input_mfcc = librosa.feature.mfcc(y=input_audio, sr=16000)
-    for word, reference_mfccs in custom_sounds.items():
-        for reference_mfcc in reference_mfccs:
-            similarity = cosine(input_mfcc.flatten(), reference_mfcc.flatten())
-            if similarity < threshold:
-                return word
-    return None
-
-# Load the custom sounds for matching
-custom_sounds = load_custom_sounds(custom_words)
-
-def process_custom_words_in_speech(audio):
-    """Processes the audio input and replaces recognized custom words."""
-    input_audio, sr = librosa.load(BytesIO(audio), sr=16000) 
-    matched_word = match_custom_word(input_audio, custom_sounds)
-    if matched_word:
-        return matched_word
-    return None
-
-MFCC_TARGET_LENGTH = 260
-
-def load_custom_sounds(custom_words):
-    """Loads and preprocesses custom word sounds."""
-    loaded_sounds = {}
-    for word, path in custom_words.items():
-        if not os.path.exists(path):
-            print(pastel_red(f"Error: File not found - {path}"))
-            continue
-        try:
-            audio_data, sr = librosa.load(path, sr=None)
-            mfcc = librosa.feature.mfcc(y=audio_data, sr=sr)
-            mfcc = pad_or_trim_mfcc(mfcc, MFCC_TARGET_LENGTH) 
-            loaded_sounds[word] = mfcc
-        except Exception as e:
-            print(pastel_red(f"Error loading {word} from {path}: {e}"))
-    return loaded_sounds
-
-def compare_mfccs(input_mfcc, custom_sounds, similarity_threshold=0.8):
-    """Compares the MFCC of the input with the preloaded custom sounds."""
-    input_mfcc_padded = pad_or_trim_mfcc(input_mfcc, MFCC_TARGET_LENGTH)
-
-    for word, custom_mfcc in custom_sounds.items():
-        similarity = np.dot(input_mfcc_padded.flatten(), custom_mfcc.flatten()) / (
-                np.linalg.norm(input_mfcc_padded.flatten()) * np.linalg.norm(custom_mfcc.flatten()))
-        
-        if similarity >= similarity_threshold:
-            return word
-    return None
-
 # Function that handles voice commands
 def handle_voice_command(voice_text):
     global voice_mode_active, agent_voice_active
@@ -507,7 +348,7 @@ def handle_voice_command(voice_text):
         # Check if it's a command (starts with / or is a known command word)
         is_command = (voice_text.startswith('/') or 
                      voice_text.startswith(('recall ', 'memorize ', 'status', 'help', 'imagine ', 'room', 
-                                          'markets ', 'read ', 'voice', 'ask', '0x', 'dna', 'video', 'music',)))
+                                          'markets ', 'read ', 'voice', 'ask', '0x', 'dna', 'video', 'music', 'theme',)))
         
         if voice_text.startswith("recall "):
             recall_keyword = voice_text.replace("recall", "").strip()
@@ -532,6 +373,11 @@ def handle_voice_command(voice_text):
         elif voice_text == "help":
             handle_user_query("/help")
             speak_response("Help displayed.")
+            return
+
+        elif voice_text == "theme":
+            handle_user_query("/theme")
+            speak_response("Theme selector activated.")
             return
 
         elif voice_text.startswith("imagine "):
@@ -1213,7 +1059,9 @@ def boot_up_sequence():
 
     pygame.mixer.init()
     try:
-        pygame.mixer.music.load(r'E:\Agents\Test 1\gb.mp3')
+        # gb.mp3
+        gb_path = os.path.join(os.path.dirname(__file__), 'system_sounds', 'gb.mp3')
+        pygame.mixer.music.load(gb_path)
         pygame.mixer.music.play()
     except Exception as e:
         print(pastel_red(f"Error fetching gb.mp3: {str(e)}"))
@@ -1580,7 +1428,7 @@ def generate_image_from_prompt(prompt):
         # Handle image data
         try:
             image_data = BytesIO(response.content)
-            save_path = ensure_directory_exists(r"E:\Agents\OPSIIE Generated Images")
+            save_path = ensure_directory_exists(os.path.join(os.path.dirname(__file__), 'outputs', 'images'))
             image_filename = os.path.join(save_path, clean_filename(prompt))
 
             with open(image_filename, "wb") as f:
@@ -1921,7 +1769,7 @@ def handle_music_command(command):
         audio_values = musicgen_model.generate(**inputs, max_new_tokens=1024)
 
         # Save the audio
-        save_path = ensure_directory_exists(r"E:\Agents\OPSIIE Generated Music")
+        save_path = ensure_directory_exists(os.path.join(os.path.dirname(__file__), 'outputs', 'music'))
         output_file = os.path.join(save_path, clean_filename(prompt, extension='wav'))
 
         # Get sample rate
@@ -2099,6 +1947,12 @@ def handle_user_query(prompt):
         print(pastel_yellow("Voice mode deactivated. Switching to text input mode."))
         return
     
+    if command == 'theme':
+        # Trigger theme selection during conversation
+        print(pastel_cyan("Theme selector activated..."))
+        select_theme()
+        print(pastel_green("Theme updated successfully!"))
+    
     if prompt.lower().startswith('/soulsig'):
         command_parts = prompt.split(' ', 1)
         
@@ -2120,7 +1974,8 @@ def handle_user_query(prompt):
                 print(pastel_red("Once your SoulSig is wiped, it ceases to live in the mnemonic matrix.\nPermanent data loss is imminent. Proceed with caution!\n"))
                 
                 # Play the warning sound alert using pygame
-                pygame.mixer.music.load(r'E:\Agents\Test 1\alert.mp3')
+                alert_path = os.path.join(os.path.dirname(__file__), 'system_sounds', 'alert.mp3')
+                pygame.mixer.music.load(alert_path)
                 pygame.mixer.music.play()
 
                 # Ask for user confirmation
@@ -2145,7 +2000,8 @@ def handle_user_query(prompt):
                     known_user_names[current_user]['soul_sig'] = temporary_soul_sig.copy()  # Restore the soul signature
                     
                     # Play the healing sound alert using pygame
-                    pygame.mixer.music.load(r'E:\Agents\Test 1\heal.mp3')
+                    heal_path = os.path.join(os.path.dirname(__file__), 'system_sounds', 'heal.mp3')
+                    pygame.mixer.music.load(heal_path)
                     pygame.mixer.music.play()
                     
                     print(pastel_green("\nSoul Signature has been restored from temporary storage.\n"))
@@ -2402,7 +2258,8 @@ def change_weblimit(new_limit=None):
 # |_|  |_/_/ \_\___|_|\_| |____\___/ \___/|_|                                           
 # *** Main Interaction Loop ***
 
-# Display splash and boot-up sequence
+# Move theme selection to before splash/logo
+select_theme()
 display_splash()
 boot_up_sequence()
 preload_conversations(convo)
@@ -2474,6 +2331,11 @@ while True:
         toggle_voice_mode(prompt.lower())
         print()
         continue  # Voice interactions are now active; skip further processing
+    
+    elif prompt.lower().startswith('/theme'):
+        handle_user_query("/theme")
+        print()
+        continue  # Theme selection completed; continue to next iteration
     
     else:
         handle_user_query(prompt)

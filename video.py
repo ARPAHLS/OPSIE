@@ -34,7 +34,7 @@ class VideoGenerator:
         self.initialize_pipeline()
         
         # Create results directory
-        self.results_dir = ensure_directory_exists(r"E:\Agents\OPSIIE Generated Videos")
+        self.results_dir = ensure_directory_exists(os.path.join(os.path.dirname(__file__), 'outputs', 'videos'))
 
     def initialize_pipeline(self):
         """Initialize or update the pipeline with the current model"""

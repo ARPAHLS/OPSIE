@@ -1,13 +1,16 @@
 import time
 from colorama import Fore
 import pygame
+import os
 
 # *** Help Command ***
 def display_help():
     """Displays a minimal and slick help screen with grouped commands."""
     
     pygame.mixer.init()
-    pygame.mixer.music.load (r'E:\Agents\Test 1\helpbell.mp3')
+    # Dynamically construct the path to system_sounds/helpbell.mp3
+    sound_path = os.path.join(os.path.dirname(__file__), 'system_sounds', 'helpbell.mp3')
+    pygame.mixer.music.load(sound_path)
     pygame.mixer.music.play()
 
     print(Fore.LIGHTGREEN_EX + """
@@ -56,6 +59,7 @@ def display_help():
             ('/mail <emails, subject, and message>', 'Send emails by parsing unstructured prompts. See /help mail.'),
             ('/weblimit <number>', 'Set webpage character extraction limit (500-5000).'),
             ('/status', 'Self-checks and system status update.'),
+            ('/theme', 'Change terminal color theme between during conversation.'),
             ('/soulsig <message>', 'Manage your personalized Soul Signature. See /help soulsig for details.')
         ],
         'BETA Commands': [
@@ -348,7 +352,7 @@ Notes:
     'receive': """
 /receive
 
-Display OPSIE’s and the current user’s public wallet addresses.
+Display OPSIE's and the current user's public wallet addresses.
 
 Use this command to get the addresses for receiving funds or top up your agent's wallet.
 This is a beta function, use with caution.
@@ -441,6 +445,29 @@ This is particularly helpful when browsing large datasets or public domains to a
 Self-checks and system status update.
 
 Use this command to perform system diagnostics and get a status report.
+""",
+    'theme': """
+/theme
+
+Change color theme between Pastel and Vibrant during conversation.
+
+**Usage:**
+    /theme
+
+This command activates the theme selector, allowing you to switch between:
+- **Pastel**: Soft, muted colors for a gentle visual experience
+- **Vibrant**: High-contrast, bold colors for enhanced visibility
+
+**Features:**
+- Can be used at any time during a conversation
+- Changes apply immediately to all future output
+- Works in both text and voice modes
+- Voice command: Simply say "theme" to activate
+
+**Note:**
+- The theme change affects all subsequent text output
+- Previously printed text retains its original colors
+- Logo and splash screen always use the selected theme
 """,
     'voice': """
 /voice
