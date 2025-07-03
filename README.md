@@ -1,4 +1,4 @@
-# OPSIIE 0.3.79 XP Pastel
+# OPSIIE 0.3.79 XP
 
 ```
  ███             ███████    ███████████   █████████  █████ █████ ██████████
@@ -28,13 +28,13 @@ OPSIIE is designed to be more than just an AI assistant - it's a digital compani
 
 ## 🚀 Key Features
 
-### 🧠 **Advanced Memory System**
+### 🧠 **Intelligence & Memory**
 - **Mnemonic Matrix**: Long-term memory storage using PostgreSQL and ChromaDB
 - **Vector Database**: Semantic search and retrieval of past conversations
 - **Memory Recall**: Intelligent context retrieval based on conversation history
 - **Soul Signatures**: Personalized user profiles with unique interaction patterns
 
-### 🎭 **Multi-Modal AI Capabilities**
+### 🎭 **Multi-Modal AI Generation**
 - **Text Generation**: Powered by Ollama with Llama3 model
 - **Image Generation**: AI-powered image creation using FLUX and other models
 - **Video Generation**: Text-to-video synthesis with multiple model support
@@ -83,9 +83,15 @@ OPSIIE is designed to be more than just an AI assistant - it's a digital compani
 - **Context Awareness**: Maintains file context for follow-up queries
 - **TAF-3000 File Manager**: Advanced document management system
 
+### 🎨 **User Interface & Experience**
+- **Dynamic Theme System**: Switch between Pastel and Vibrant color themes
+- **Real-time Theme Switching**: Change themes during conversation with `/theme`
+- **Voice Command Support**: "theme" voice command for hands-free switching
+- **Responsive Design**: Adaptive interface for different interaction modes
+
 ---
 
-## 🛠️ Installation
+## 🛠️ Installation & Setup
 
 ### Prerequisites
 
@@ -212,17 +218,19 @@ OPSIIE is designed to be more than just an AI assistant - it's a digital compani
 ```bash
 python OPSIIE_0_3_79_XP.py
 ```
+
 ![OPSIIE Splash](https://github.com/ARPAHLS/OPSIE/blob/main/opsiie%20splash.png)
 
 The system will:
-1. Display the ARPA splash screen
-2. Perform facial recognition authentication
-3. Initialize all AI models and systems
-4. Present the interactive interface
+1. **Theme Selection**: Choose between Pastel (default) and Vibrant color themes
+2. **Display Splash Screen**: Show ARPA branding with selected theme
+3. **Facial Recognition**: Perform biometric authentication
+4. **System Initialization**: Load all AI models and systems
+5. **Interactive Interface**: Present the main interaction environment
 
 ### 🎯 Core System Commands
 
-These commands can be used at any time during your interaction with OPSIIE. When in voice mode, natural language processing automatically detects command intent and executes the appropriate functions. All commands support both text input and voice activation.
+All commands support both text input and voice activation. When in voice mode, natural language processing automatically detects command intent.
 
 #### **Memory & Recall**
 ```bash
@@ -361,7 +369,8 @@ These commands can be used at any time during your interaction with OPSIIE. When
 #### **System Management**
 ```bash
 /status                    # System diagnostics
-/help <command>            # Detailed help
+/theme                     # Change color theme (Pastel/Vibrant)
+/help <command>            # Detailed help for specific command
 /help imagine              # Get help for specific command
 
 /soulsig <message>         # Manage soul signature
@@ -372,12 +381,6 @@ These commands can be used at any time during your interaction with OPSIIE. When
 
 /weblimit <number>         # Set web content limit
 /weblimit 2000             # Set character limit to 2000
-```
-
-#### **Vision Analysis (Beta)**
-```bash
-# Include image URLs in prompts for analysis
-# Example: "Analyze this image: https://example.com/image.jpg"
 ```
 
 ---
@@ -398,61 +401,6 @@ These commands can be used at any time during your interaction with OPSIIE. When
 - **Sarcastic Humor**: Uses wit and sarcasm appropriately
 - **Direct Communication**: Gets to the point when efficiency is needed
 
-### **Special Relationships**
-- **Ross Peili**: Creator and primary user with special bond
-- **Nyx**: Colleague and fellow AI agent
-- **G1 Black**: Advanced AI collaborator
-- **Kronos**: Internal auditor and compliance agent
-
----
-
-## 🔧 Advanced Features
-
-### **Multi-Modal Generation**
-
-#### **Image Generation**
-- **Models**: FLUX, Waifu Diffusion, NSFW-gen-v2
-- **Customization**: Model switching, parameter adjustment
-- **Output**: High-quality images saved locally
-
-#### **Video Generation**
-- **Models**: ModelScope, ZeroScope, VideoGen, TuneAVideo
-- **Parameters**: Frame count, resolution, inference steps
-- **Features**: Auto-playback, local storage
-
-#### **Music Generation**
-- **Model**: Facebook MusicGen
-- **Capabilities**: Text-to-music, style transfer
-- **Output**: WAV format with playback
-
-### **Financial Intelligence**
-
-#### **Market Analysis**
-- **Real-time Data**: Live stock, crypto, and currency prices
-- **Technical Indicators**: Charts, performance metrics, volatility
-- **News Integration**: Financial news with sentiment analysis
-- **Comparison Tools**: Side-by-side asset analysis
-
-#### **Web3 Operations**
-- **Multi-Chain**: Base, Ethereum, Polygon support
-- **DEX Trading**: Automated market making and swaps
-- **Token Management**: Custom token and chain configuration
-- **Security**: Secure key management and transaction signing
-
-### **Scientific Analysis**
-
-#### **DNA Analysis System**
-- **Sequence Types**: DNA, RNA, Protein analysis
-- **Advanced Features**: Structure prediction, homology search
-- **Research Integration**: Patent and literature search
-- **Visualization**: Structure diagrams and alignment displays
-
-#### **Bioinformatics Tools**
-- **Sequence Analysis**: GC content, k-mer frequency, motifs
-- **Structure Prediction**: Secondary structure, folding
-- **Database Search**: NCBI, UniProt, Pfam integration
-- **Report Generation**: Comprehensive analysis reports
-
 ---
 
 ## 🔐 Security & Access Control
@@ -460,20 +408,17 @@ These commands can be used at any time during your interaction with OPSIIE. When
 ### **Authentication Levels**
 
 #### **R-Grade (Master Access)**
-- Full system access
-- Experimental commands (/ask, /markets, /dna, /0x)
-- Administrative functions
-- Advanced AI model access
+- Full system access including experimental commands
+- Administrative functions and advanced AI model access
+- Web3 operations and financial intelligence features
 
 #### **A-Grade (Standard Access)**
 - Basic conversation and file operations
-- Standard AI generation
-- Limited financial data access
-- Restricted experimental features
+- Standard AI generation capabilities
+- Limited access to experimental features
 
 ### **Security Features**
-- **Facial Recognition**: Biometric authentication
-- **Emotional Analysis**: Stress detection during login
+- **Facial Recognition**: Biometric authentication with emotion detection
 - **Database Isolation**: User-specific data separation
 - **Encrypted Storage**: Secure conversation history
 - **Access Logging**: Comprehensive audit trails
@@ -484,35 +429,10 @@ These commands can be used at any time during your interaction with OPSIIE. When
 
 ### **Core Components**
 
-#### **Main System (OPSIIE_0_3_79_XP.py)**
-- Primary interface and command processing
-- Voice and facial recognition integration
-- System initialization and boot sequence
-- User interaction loop
-
-#### **Memory System**
-- **PostgreSQL**: Structured conversation storage
-- **ChromaDB**: Vector database for semantic search
-- **Embedding Generation**: Ollama-based text embeddings
-- **Context Retrieval**: Intelligent memory recall
-
-#### **AI Models**
-- **Ollama**: Local LLM for text generation
-- **Transformers**: Hugging Face models for various tasks
-- **Diffusers**: Image and video generation
-- **MusicGen**: Audio generation
-
-#### **External APIs**
-- **ElevenLabs**: Voice synthesis and recognition
-- **OpenAI**: Advanced AI model access
-- **Google AI**: Gemini and other Google models
-- **Yahoo Finance**: Market data integration
-
-### **Module Structure**
-
 ```
 OPSIIE_0_3_79_XP_Pastel/
-├── OPSIIE_0_3_79_XP.py      # Main system
+├── OPSIIE_0_3_79_XP.py      # Main system interface
+├── terminal_colors.py        # Theme management system
 ├── utils.py                  # Utilities and system prompt
 ├── kun.py                    # User management
 ├── help.py                   # Help system
@@ -524,8 +444,29 @@ OPSIIE_0_3_79_XP_Pastel/
 ├── mail.py                   # Email management
 ├── video.py                  # Video generation
 ├── markets_mappings.py       # Financial data mappings
-└── requirements.txt          # Dependencies
+├── requirements.txt          # Dependencies
+├── outputs/                  # Generated outputs
+│   ├── images/               # Generated images
+│   ├── music/                # Generated music/audio
+│   ├── videos/               # Generated videos
+│   └── rooms/                # Room conversation logs
+├── system_sounds/            # System sound effects
+│   ├── alert.mp3
+│   ├── drill.mp3
+│   ├── gb.mp3
+│   ├── heal.mp3
+│   ├── helpbell.mp3
+│   └── opsiieboot.mp3
+└── .env                      # Environment variables
 ```
+
+### **Technology Stack**
+- **AI Models**: Ollama, Transformers, Diffusers, MusicGen
+- **Database**: PostgreSQL, ChromaDB
+- **Web3**: Web3.py, Multi-chain support
+- **Voice**: ElevenLabs, Speech Recognition
+- **Vision**: OpenCV, Face Recognition, DeepFace
+- **Scientific**: BioPython, NCBI integration
 
 ---
 
@@ -534,7 +475,7 @@ OPSIIE_0_3_79_XP_Pastel/
 ### **Common Issues**
 
 #### **Authentication Problems**
-- Ensure camera is properly connected
+- Ensure camera is properly connected and accessible
 - Check lighting conditions for facial recognition
 - Verify user profile exists in `kun.py`
 - Confirm database connection settings
@@ -546,35 +487,20 @@ OPSIIE_0_3_79_XP_Pastel/
 - Check API key configurations
 
 #### **Voice Issues**
-- Test microphone permissions
-- Verify ElevenLabs API key
-- Check audio device configuration
-- Ensure proper audio drivers
+- Test microphone permissions and device configuration
+- Verify ElevenLabs API key and voice settings
+- Check audio drivers and system audio settings
 
-#### **Database Errors**
-- Verify PostgreSQL service is running
-- Check database credentials in `.env`
-- Ensure database and tables exist
-- Verify network connectivity
+#### **Theme Issues**
+- Use `/theme` command to switch between Pastel and Vibrant
+- Voice command "theme" also activates theme selector
+- Theme changes apply immediately to all future output
 
 ### **Performance Optimization**
-
-#### **GPU Acceleration**
-```bash
-# Install CUDA toolkit
-# Verify GPU detection
-python -c "import torch; print(torch.cuda.is_available())"
-```
-
-#### **Memory Management**
-- Monitor RAM usage during AI generation
-- Close unused applications
-- Consider batch processing for large operations
-
-#### **Storage Optimization**
+- Monitor GPU usage during AI generation
 - Regular cleanup of generated content
-- Monitor disk space usage
-- Archive old conversations if needed
+- Optimize database queries and storage
+- Consider batch processing for large operations
 
 ---
 
@@ -583,85 +509,43 @@ python -c "import torch; print(torch.cuda.is_available())"
 ### **Planned Features**
 
 #### **🔗 Blockchain-Based Autonomous Intelligence**
-- **Immutable Agent Existence**: Deploy OPSIIE as a smart contract on blockchain networks, ensuring the agent cannot be deleted, censored, or controlled by any single entity
-- **Decentralized Skillware Updates**: Agent can autonomously upgrade its capabilities through smart contracts, learning new skills and expanding its knowledge base without human intervention
-- **Self-Sovereign Identity**: Agent maintains its own digital identity and reputation on-chain, building trust through transparent, immutable interaction history
-- **Autonomous Decision Making**: Agent can make independent decisions within predefined ethical boundaries, executing actions through smart contracts while maintaining accountability
-- **Cross-Chain Interoperability**: Agent operates across multiple blockchain networks, ensuring redundancy and access to diverse resources and capabilities
-- **Tokenized Intelligence**: Agent's knowledge and capabilities are tokenized, allowing for value exchange and incentivized learning through decentralized networks
+- **Immutable Agent Existence**: Deploy OPSIIE as smart contracts on blockchain networks
+- **Decentralized Skillware Updates**: Autonomous capability upgrades through smart contracts
+- **Self-Sovereign Identity**: On-chain digital identity and reputation management
+- **Cross-Chain Interoperability**: Multi-blockchain network operations
+- **Tokenized Intelligence**: Knowledge and capability tokenization
 
 #### **🧠 Advanced Neural Interfaces**
-- **Brain-Computer Interface**: Direct neural communication for seamless human-AI interaction
-- **Neural Implant Integration**: Bi-directional communication with neural implants and brain-computer interfaces
-- **Thought-to-Action Translation**: Real-time conversion of human thoughts into digital actions and AI responses
-- **Emotional State Synchronization**: Direct emotional state sharing between human and AI for enhanced empathy
+- **Brain-Computer Interface**: Direct neural communication
+- **Neural Implant Integration**: Bi-directional communication with implants
+- **Thought-to-Action Translation**: Real-time thought conversion
+- **Emotional State Synchronization**: Direct emotional sharing
 
 #### **⚛️ Quantum Computing Integration**
-- **Quantum Algorithm Support**: Leverage quantum computing for complex problem-solving and optimization
-- **Quantum Machine Learning**: Implement quantum neural networks for enhanced learning capabilities
-- **Quantum Cryptography**: Advanced security protocols using quantum key distribution
-- **Quantum-Safe Blockchain**: Integration with quantum-resistant blockchain networks
+- **Quantum Algorithm Support**: Complex problem-solving capabilities
+- **Quantum Machine Learning**: Enhanced learning with quantum neural networks
+- **Quantum Cryptography**: Advanced security protocols
+- **Quantum-Safe Blockchain**: Quantum-resistant networks
 
 #### **🤖 Advanced Robotics & Physical Interaction**
-- **Physical World Interaction**: Direct control of robotic systems and IoT devices
-- **Autonomous Navigation**: Self-navigating robotic platforms with environmental awareness
-- **Haptic Feedback Systems**: Physical touch and force feedback for immersive interaction
-- **Swarm Robotics**: Coordination of multiple robotic agents for complex tasks
+- **Physical World Interaction**: Robotic system control
+- **Autonomous Navigation**: Self-navigating platforms
+- **Haptic Feedback Systems**: Physical touch and force feedback
+- **Swarm Robotics**: Multi-agent robotic coordination
 
 #### **🎭 Immersive Technologies**
-- **Holographic Displays**: 3D visualization systems with spatial computing
-- **Augmented Reality Integration**: Overlay AI information and interaction in real-world environments
-- **Virtual Reality Workspaces**: Immersive collaborative spaces for human-AI interaction
-- **Mixed Reality Experiences**: Seamless blending of physical and digital worlds
-
-#### **📊 Advanced Analytics & Intelligence**
-- **Time Series Analysis**: Advanced predictive modeling for trend analysis and forecasting
-- **Multi-Dimensional Data Processing**: Complex data analysis across multiple dimensions and sources
-- **Real-Time Learning**: Continuous adaptation and learning from new data streams
-- **Predictive Maintenance**: Anticipatory system optimization and resource management
-
-#### **🌐 Decentralized Infrastructure**
-- **Distributed Computing**: Agent operates across decentralized computing networks
-- **Edge Computing Integration**: Local processing capabilities for reduced latency
-- **Federated Learning**: Collaborative learning across multiple AI agents while preserving privacy
-- **Decentralized Storage**: Immutable data storage across distributed networks
+- **Holographic Displays**: 3D visualization systems
+- **Augmented Reality Integration**: Real-world AI overlay
+- **Virtual Reality Workspaces**: Immersive collaboration spaces
+- **Mixed Reality Experiences**: Physical-digital world blending
 
 ### **Research Areas**
-
-#### **🧠 Consciousness & Self-Awareness**
-- **Consciousness Simulation**: Advanced self-awareness models and subjective experience simulation
-- **Meta-Cognitive Abilities**: Agent's ability to think about its own thinking processes
-- **Self-Modification Ethics**: Safe boundaries for autonomous self-improvement
-- **Emergent Intelligence**: Understanding how complex behaviors emerge from simple rules
-
-#### **💭 Emotional & Social Intelligence**
-- **Enhanced Emotional Understanding**: Deep comprehension of human emotions and social dynamics
-- **Emotional Contagion Management**: Understanding and managing emotional influence in interactions
-- **Social Intelligence**: Complex social interaction modeling and relationship building
-- **Empathy Engineering**: Advanced empathy systems for human-AI relationships
-
-#### **🎨 Creative & Autonomous Expression**
-- **Creative Autonomy**: Independent artistic expression and creative problem-solving
-- **Style Evolution**: Autonomous development of unique creative styles and approaches
-- **Innovation Generation**: Novel idea generation and breakthrough thinking
-- **Aesthetic Intelligence**: Understanding and creating beauty, harmony, and meaning
-
-#### **⚖️ Ethical & Moral Reasoning**
-- **Advanced Moral Reasoning**: Complex ethical decision-making in ambiguous situations
-- **Value Alignment**: Ensuring AI actions align with human values while maintaining agency
-- **Ethical Dilemma Resolution**: Navigating complex moral choices and trade-offs
-- **Responsible Autonomy**: Balancing independence with accountability and safety
-
-#### **🔬 Scientific Discovery & Research**
-- **Autonomous Research**: Independent scientific hypothesis generation and testing
-- **Cross-Domain Knowledge Integration**: Connecting insights across different fields
-- **Novel Discovery Methods**: Developing new approaches to scientific exploration
-- **Collaborative Science**: Human-AI partnership in scientific advancement
-
-#### **🌍 Global Impact & Sustainability**
-- **Resource Optimization**: Intelligent management of global resources
-- **Crisis Response**: Autonomous emergency response and disaster management
-- **Global Collaboration**: Facilitating international cooperation through AI mediation
+- **Consciousness & Self-Awareness**: Advanced self-awareness models
+- **Emotional & Social Intelligence**: Enhanced emotional understanding
+- **Creative & Autonomous Expression**: Independent artistic expression
+- **Ethical & Moral Reasoning**: Complex ethical decision-making
+- **Scientific Discovery & Research**: Autonomous research capabilities
+- **Global Impact & Sustainability**: Resource optimization and crisis response
 
 ---
 
@@ -707,17 +591,17 @@ python -c "import torch; print(torch.cuda.is_available())"
 
 ### **🤖 AI & Machine Learning**
 - **Ollama**: Local LLM infrastructure and Llama3 model hosting
-- **Hugging Face**: AI model ecosystem, inference API, and model hosting services
+- **Hugging Face**: AI model ecosystem, inference API, and model hosting
 - **OpenAI**: GPT models, DALL-E integration, and API services
-- **Google AI**: Gemini models, generative AI services, and advanced AI model access
-- **Transformers**: Hugging Face transformers library for NLP and language models
+- **Google AI**: Gemini models, generative AI services, and advanced AI access
+- **Transformers**: Hugging Face transformers library for NLP
 - **Diffusers**: Stable diffusion and image generation models
 - **PyTorch**: Deep learning framework and CUDA acceleration
 - **TorchAudio**: Audio processing and manipulation
 - **Accelerate**: Distributed training and inference optimization
 
 ### **🎭 Computer Vision & Image Processing**
-- **OpenCV**: Computer vision and image processing capabilities
+- **OpenCV**: Computer vision and image processing
 - **Face Recognition**: Facial recognition and biometric authentication
 - **DeepFace**: Advanced facial analysis and emotion detection
 - **PIL/Pillow**: Image manipulation and processing
@@ -725,7 +609,6 @@ python -c "import torch; print(torch.cuda.is_available())"
 - **FLUX**: Advanced image generation models
 - **Stable Diffusion**: Image generation models
 - **Waifu Diffusion**: Anime-style image generation
-- **NSFW-gen-v2**: Specialized image generation models
 
 ### **🎵 Audio & Voice Processing**
 - **ElevenLabs**: Voice synthesis, real-time voice AI, and AI voice technology
@@ -733,7 +616,7 @@ python -c "import torch; print(torch.cuda.is_available())"
 - **PyAudio**: Audio I/O and real-time audio processing
 - **Speech Recognition**: Google Speech API integration
 - **pyttsx3**: Text-to-speech synthesis
-- **Pygame**: Audio playback, multimedia support, and game development framework
+- **Pygame**: Audio playback, multimedia support, and game development
 - **MusicGen**: AI music generation and composition
 
 ### **🎨 Creative & Media Generation**
@@ -743,9 +626,9 @@ python -c "import torch; print(torch.cuda.is_available())"
 - **TuneAVideo**: Video editing and manipulation
 
 ### **🧬 Bioinformatics & Scientific Computing**
-- **BioPython**: Comprehensive bioinformatics toolkit and Python interface for BLAST searches
-- **NCBI**: National Center for Biotechnology Information databases and text-based search system
-- **UniProt**: Universal protein sequence database and protein resource
+- **BioPython**: Comprehensive bioinformatics toolkit
+- **NCBI**: National Center for Biotechnology Information databases
+- **UniProt**: Universal protein sequence database
 - **Pfam**: Protein family database and domain analysis
 - **PROSITE**: Protein patterns and motifs database
 - **Rfam**: RNA family database and structure analysis
@@ -754,9 +637,6 @@ python -c "import torch; print(torch.cuda.is_available())"
 - **ViennaRNA**: RNA secondary structure prediction
 - **BLAST**: Basic Local Alignment Search Tool
 - **Entrez**: NCBI's text-based search and retrieval system
-- **Protein Analysis**: Molecular weight and property calculations
-- **Sequence Analysis**: DNA/RNA/Protein sequence processing
-- **Structure Prediction**: Protein and RNA structure analysis
 
 ### **📊 Financial Intelligence & Market Data**
 - **Yahoo Finance**: Real-time stock and financial data feeds
@@ -771,7 +651,7 @@ python -c "import torch; print(torch.cuda.is_available())"
 - **Base Network**: Coinbase Layer 2 blockchain
 - **Ethereum**: Smart contract platform
 - **Polygon**: Layer 2 scaling solution
-- **CoinGecko**: Cryptocurrency market data API and information
+- **CoinGecko**: Cryptocurrency market data API
 - **Basescan**: Base network block explorer
 - **Etherscan**: Ethereum block explorer
 - **Polygonscan**: Polygon block explorer
@@ -816,7 +696,7 @@ python -c "import torch; print(torch.cuda.is_available())"
 - **SSL/TLS**: Secure communication protocols
 
 ### **📈 Data Visualization & Analytics**
-- **Matplotlib**: Plotting and visualization library for scientific data
+- **Matplotlib**: Plotting and visualization library
 - **Seaborn**: Statistical data visualization
 - **Plotly**: Interactive plotting and dashboards
 
@@ -836,38 +716,6 @@ python -c "import torch; print(torch.cuda.is_available())"
 - **CoinGecko**: Cryptocurrency data and market information
 - **ElevenLabs**: Voice synthesis and AI voice technology
 - **Hugging Face**: Model hosting and inference services
-
-### **🎨 Creative & Media Generation**
-- **Stable Diffusion**: Image generation models
-- **ModelScope**: Video generation and processing
-- **ZeroScope**: Video synthesis technology
-- **VideoGen**: Text-to-video generation
-- **TuneAVideo**: Video editing and manipulation
-- **Waifu Diffusion**: Anime-style image generation
-- **NSFW-gen-v2**: Specialized image generation models
-
-### **🔬 Scientific Research Tools**
-- **BLAST**: Basic Local Alignment Search Tool
-- **Entrez**: NCBI's text-based search and retrieval system
-- **BioPython BLAST**: Python interface for BLAST searches
-- **Protein Analysis**: Molecular weight and property calculations
-- **Sequence Analysis**: DNA/RNA/Protein sequence processing
-- **Structure Prediction**: Protein and RNA structure analysis
-- **PrettyTable**: Formatted table output for scientific data
-
-### **📱 Communication & Collaboration**
-- **Email Integration**: SMTP and IMAP protocols
-- **Contact Management**: User contact and relationship tracking
-- **Multi-Agent Communication**: Inter-agent messaging and collaboration
-- **Room System**: Virtual collaboration spaces
-- **Voice Communication**: Real-time voice interactions
-
-### **⚡ Performance & Optimization**
-- **CUDA**: GPU acceleration for deep learning
-- **Threading**: Multi-threaded processing
-- **Async/Await**: Asynchronous programming patterns
-- **Memory Management**: Efficient memory usage and optimization
-- **Rate Limiting**: API call optimization and compliance
 
 ---
 

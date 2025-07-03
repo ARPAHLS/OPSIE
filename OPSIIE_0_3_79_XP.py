@@ -320,6 +320,121 @@ def speak_response(text):
         print(pastel_red(f"Error with Eleven Labs API: {response.status_code}"))
         print(pastel_red(response.text))
 
+# List of spoken reference keywords and phrases
+custom_words = {
+    "Opsie": [r'E:\\Agents\\Test 1\\opsie.mp3'],
+    "Voice off": [r'E:\\Agents\\Test 1\\voiceoff.mp3'],
+    "send Base Degen": [
+        r'E:\\Agents\\Test 1\\sendbasedegen.mp3',
+        r'E:\\Agents\\Test 1\\sendbasedegen2.mp3',
+        r'E:\\Agents\\Test 1\\sendbasedegen3.mp3'
+    ],
+    "20 to Ross": [
+        r'E:\\Agents\\Test 1\\20toross.mp3',
+        r'E:\\Agents\\Test 1\\20toross2.mp3',
+        r'E:\\Agents\\Test 1\\20toross3.mp3'
+    ],
+    "50 to Ross": [
+        r'E:\\Agents\\Test 1\\50toross.mp3',
+        r'E:\\Agents\\Test 1\\50toross2.mp3',
+        r'E:\\Agents\\Test 1\\50toross3.mp3'
+    ]
+}
+
+# Load and preprocess the reference sounds
+def load_custom_sounds(custom_words):
+    """Loads custom sounds as MFCCs."""
+    loaded_sounds = {}
+    for word, paths in custom_words.items():
+        loaded_sounds[word] = []
+        for path in paths:
+            try:
+                audio_data, sr = librosa.load(path, sr=None)
+                mfcc = librosa.feature.mfcc(y=audio_data, sr=sr)
+                mfcc = pad_or_trim_mfcc(mfcc, MFCC_TARGET_LENGTH)
+                loaded_sounds[word].append(mfcc)
+            except Exception as e:
+                print(f"Error loading {word} from {path}: {e}")
+    return loaded_sounds
+
+# Helper function to ensure MFCCs are of a consistent length
+def pad_or_trim_mfcc(mfcc, target_length=MFCC_TARGET_LENGTH):
+    """
+    Ensure that the MFCC or audio data array has a consistent length.
+    Pads or trims the MFCC to the target length.
+    """
+    if mfcc.shape[1] > target_length:
+        return mfcc[:, :target_length]
+    elif mfcc.shape[1] < target_length:
+        # Pad with zeros if it's shorter than the target length
+        return np.pad(mfcc, ((0, 0), (0, target_length - mfcc.shape[1])), mode='constant')
+    return mfcc
+
+def calculate_audio_similarity(voice_text_audio, sound_data_audio):
+    """Calculate audio similarity using cosine distance of MFCCs."""
+    mfcc_voice_text = librosa.feature.mfcc(y=voice_text_audio, sr=16000, n_mfcc=13)
+    mfcc_sound_data = librosa.feature.mfcc(y=sound_data_audio, sr=16000, n_mfcc=13)
+
+    # Flatten the MFCCs
+    mfcc_voice_text_flat = mfcc_voice_text.flatten()
+    mfcc_sound_data_flat = mfcc_sound_data.flatten()
+
+    # Calculate cosine similarity
+    similarity = 0.65 - cosine(mfcc_voice_text_flat, mfcc_sound_data_flat)
+    return similarity
+
+# Match input audio with preloaded custom sounds
+def match_custom_word(input_audio, custom_sounds, threshold=0.1):
+    """Matches input audio against custom word sounds and returns the recognized word."""
+    input_mfcc = librosa.feature.mfcc(y=input_audio, sr=16000)
+    for word, reference_mfccs in custom_sounds.items():
+        for reference_mfcc in reference_mfccs:
+            similarity = cosine(input_mfcc.flatten(), reference_mfcc.flatten())
+            if similarity < threshold:
+                return word
+    return None
+
+# Load the custom sounds for matching
+custom_sounds = load_custom_sounds(custom_words)
+
+def process_custom_words_in_speech(audio):
+    """Processes the audio input and replaces recognized custom words."""
+    input_audio, sr = librosa.load(BytesIO(audio), sr=16000) 
+    matched_word = match_custom_word(input_audio, custom_sounds)
+    if matched_word:
+        return matched_word
+    return None
+
+MFCC_TARGET_LENGTH = 260
+
+def load_custom_sounds(custom_words):
+    """Loads and preprocesses custom word sounds."""
+    loaded_sounds = {}
+    for word, path in custom_words.items():
+        if not os.path.exists(path):
+            print(pastel_red(f"Error: File not found - {path}"))
+            continue
+        try:
+            audio_data, sr = librosa.load(path, sr=None)
+            mfcc = librosa.feature.mfcc(y=audio_data, sr=sr)
+            mfcc = pad_or_trim_mfcc(mfcc, MFCC_TARGET_LENGTH) 
+            loaded_sounds[word] = mfcc
+        except Exception as e:
+            print(pastel_red(f"Error loading {word} from {path}: {e}"))
+    return loaded_sounds
+
+def compare_mfccs(input_mfcc, custom_sounds, similarity_threshold=0.8):
+    """Compares the MFCC of the input with the preloaded custom sounds."""
+    input_mfcc_padded = pad_or_trim_mfcc(input_mfcc, MFCC_TARGET_LENGTH)
+
+    for word, custom_mfcc in custom_sounds.items():
+        similarity = np.dot(input_mfcc_padded.flatten(), custom_mfcc.flatten()) / (
+                np.linalg.norm(input_mfcc_padded.flatten()) * np.linalg.norm(custom_mfcc.flatten()))
+        
+        if similarity >= similarity_threshold:
+            return word
+    return None
+
 # Function that handles voice commands
 def handle_voice_command(voice_text):
     global voice_mode_active, agent_voice_active
