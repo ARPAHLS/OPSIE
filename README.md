@@ -28,9 +28,9 @@ OPSIIE is designed to be more than just an AI assistant - it's a digital compani
 
 ---
 
-## 🚀 Key Features
+## 🚀 Key Skillware
 
-| Category | Features |
+| Module | Features |
 | :--- | :--- |
 | **🧠 Intelligence & Memory** | Mnemonic Matrix (PostgreSQL/ChromaDB), Vector Database, Intelligent Memory Recall, Personalized Soul Signatures. |
 | **🎭 Multi-Modal AI Generation** | Text (Ollama/Llama3), Image (FLUX), Video, Music (MusicGen), and Voice (ElevenLabs) generation. |
@@ -658,6 +658,7 @@ OPSIIE_0_3_79_XP_Pastel/
 
 
 *OPSIIE represents the convergence of human creativity and artificial intelligence, pushing the boundaries of what's possible in human-machine collaboration. While others argue whether machines or mankind rule over the other, we are redefining reality by creating it. If you are interested in ARPA Corp. & ARPA Hellenic Logical Systems, our vision, mission, and approach, feel free to connect via input@arpacorp.net* 
+
 
 
 
