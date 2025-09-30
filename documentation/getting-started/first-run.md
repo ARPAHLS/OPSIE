@@ -411,8 +411,9 @@ After successful first run:
 - Type `/help` for command list
 - Type `/help <command>` for specific command help
 - Check [Command Reference](../api-reference/command-reference.md)
-- Contact: opsiebyarpa@gmail.com
+- Contact: input@arpacorp.net
 
 ---
+
 
 **Welcome to OPSIIE!** Your journey with a Self-Centered Intelligence begins now. 🚀
