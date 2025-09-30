@@ -71,34 +71,49 @@ See what's next in our [Future Development](#-future-development) roadmap.
 ### Prerequisites
 
 - **Python 3.8+**
-- **PostgreSQL Database**
-- **CUDA-compatible GPU** (recommended for AI generation)
-- **Microphone and Camera** (for voice and facial recognition)
-- **Windows 10/11** (primary platform)
+- **PostgreSQL Database**: A running instance is required for memory storage.
+- **Ollama**: The Ollama service must be installed and running locally to serve the core LLM.
+- **CUDA-compatible GPU**: Highly recommended for AI, voice, and image generation performance.
+- **Microphone and Camera**: Required for voice interaction and facial recognition authentication.
+- **Platform**: Primarily developed and tested on **Windows 10/11**.
 
 ### 📦 Dependencies
 
-| **AI & ML** | **Computer Vision** | **Audio & Voice** | **Web3 & Blockchain** |
-|-------------|-------------------|------------------|---------------------|
-| ![PyTorch](https://img.shields.io/badge/PyTorch-2.0.0+-red.svg) | ![OpenCV](https://img.shields.io/badge/OpenCV-4.8.0+-blue.svg) | ![Librosa](https://img.shields.io/badge/Librosa-0.10.0+-purple.svg) | ![Web3](https://img.shields.io/badge/Web3-6.0.0+-yellow.svg) |
-| ![Transformers](https://img.shields.io/badge/Transformers-4.30.0+-blue.svg) | ![Face Recognition](https://img.shields.io/badge/Face_Recognition-1.3.0+-green.svg) | ![TorchAudio](https://img.shields.io/badge/TorchAudio-2.0.0+-red.svg) | ![Requests](https://img.shields.io/badge/Requests-2.31.0+-green.svg) |
-| ![Diffusers](https://img.shields.io/badge/Diffusers-0.21.0+-green.svg) | ![DeepFace](https://img.shields.io/badge/DeepFace-0.0.79+-red.svg) | ![PyAudio](https://img.shields.io/badge/PyAudio-0.2.11+-blue.svg) | |
-| ![Accelerate](https://img.shields.io/badge/Accelerate-0.20.0+-orange.svg) | ![Pillow](https://img.shields.io/badge/Pillow-10.0.0+-orange.svg) | ![Speech Recognition](https://img.shields.io/badge/Speech_Recognition-3.10.0+-green.svg) | |
+The system is organized into several key modules. The main dependencies for each are listed below:
 
-| **Data & Analytics** | **Database & Storage** | **Document Processing** | **Scientific Computing** |
-|---------------------|----------------------|----------------------|------------------------|
-| ![Pandas](https://img.shields.io/badge/Pandas-2.0.0+-blue.svg) | ![Psycopg](https://img.shields.io/badge/Psycopg-3.1.0+-blue.svg) | ![PyPDF2](https://img.shields.io/badge/PyPDF2-3.0.0+-red.svg) | ![BioPython](https://img.shields.io/badge/BioPython-1.81+-green.svg) |
-| ![NumPy](https://img.shields.io/badge/NumPy-1.24.0+-orange.svg) | ![ChromaDB](https://img.shields.io/badge/ChromaDB-0.4.0+-green.svg) | ![pdfplumber](https://img.shields.io/badge/pdfplumber-0.9.0+-blue.svg) | ![Matplotlib](https://img.shields.io/badge/Matplotlib-3.7.0+-blue.svg) |
-| ![SciPy](https://img.shields.io/badge/SciPy-1.10.0+-purple.svg) | | ![python-docx](https://img.shields.io/badge/python--docx-0.8.11+-green.svg) | ![PrettyTable](https://img.shields.io/badge/PrettyTable-3.8.0+-orange.svg) |
-| ![yfinance](https://img.shields.io/badge/yfinance-0.2.18+-green.svg) | | ![BeautifulSoup4](https://img.shields.io/badge/BeautifulSoup4-4.12.0+-orange.svg) | ![ViennaRNA](https://img.shields.io/badge/ViennaRNA-2.6.4+-red.svg) |
-| ![Statsmodels](https://img.shields.io/badge/Statsmodels-0.14.0+-blue.svg) | | ![lxml](https://img.shields.io/badge/lxml-4.9.0+-green.svg) | |
+| Core AI & Machine Learning | Computer Vision & Image | Audio & Voice Synthesis |
+| :--- | :--- | :--- |
+| ![PyTorch](https://img.shields.io/badge/PyTorch-2.0.0+-ee4c2c.svg) | ![OpenCV](https://img.shields.io/badge/OpenCV-4.8.0+-5c9a2f.svg) | ![Librosa](https://img.shields.io/badge/Librosa-0.10.0+-ff7f50.svg) |
+| ![Transformers](https://img.shields.io/badge/Transformers-4.30.0+-4682B4.svg) | ![Face Recognition](https://img.shields.io/badge/Face_Recognition-1.3.0+-6b4a9b.svg) | ![TorchAudio](https://img.shields.io/badge/TorchAudio-2.0.0+-ee4c2c.svg) |
+| ![Diffusers](https://img.shields.io/badge/Diffusers-0.21.0+-ff69b4.svg) | ![DeepFace](https://img.shields.io/badge/DeepFace-0.0.79+-d42a2a.svg) | ![PyAudio](https://img.shields.io/badge/PyAudio-0.2.11+-4b8bbe.svg) |
+| ![Accelerate](https://img.shields.io/badge/Accelerate-0.20.0+-f5a623.svg) | ![Pillow](https://img.shields.io/badge/Pillow-10.0.0+-a0d6e8.svg) | ![Speech Recognition](https://img.shields.io/badge/SpeechRec-3.10.0+-c71585.svg) |
+| ![Ollama](https://img.shields.io/badge/Ollama-0.3.0+-1a1a1a.svg) | | ![pyttsx3](https://img.shields.io/badge/pyttsx3-2.90-orange.svg) |
+| ![Google Generative AI](https://img.shields.io/badge/Google_GenAI-0.3.0+-4285F4.svg) | | |
 
-| **Web Services** | **Multimedia** | **Utilities** | **Development** |
-|-----------------|---------------|---------------|----------------|
-| ![aiohttp](https://img.shields.io/badge/aiohttp-3.8.0+-green.svg) | ![Pygame](https://img.shields.io/badge/Pygame-2.5.0+-purple.svg) | ![python-dotenv](https://img.shields.io/badge/python--dotenv-1.0.0+-green.svg) | ![pytest](https://img.shields.io/badge/pytest-7.4.0+-green.svg) |
-| ![WebSockets](https://img.shields.io/badge/WebSockets-11.0.0+-blue.svg) | | ![Colorama](https://img.shields.io/badge/Colorama-0.4.6+-blue.svg) | ![Black](https://img.shields.io/badge/Black-23.0.0+-black.svg) |
-| ![Google Generative AI](https://img.shields.io/badge/Google_Generative_AI-0.3.0+-orange.svg) | | ![tqdm](https://img.shields.io/badge/tqdm-4.65.0+-green.svg) | ![Flake8](https://img.shields.io/badge/Flake8-6.0.0+-blue.svg) |
-| ![imaplib2](https://img.shields.io/badge/imaplib2-3.6+-blue.svg) | | ![ratelimit](https://img.shields.io/badge/ratelimit-2.2.1+-orange.svg) | ![pyttsx3](https://img.shields.io/badge/pyttsx3-2.90+-orange.svg) |
+| Web3 & Blockchain | Data, Finance & Analytics | Database & Vector Storage |
+| :--- | :--- | :--- |
+| ![Web3.py](https://img.shields.io/badge/Web3.py-6.0.0+-8A2BE2.svg) | ![Pandas](https://img.shields.io/badge/Pandas-2.0.0+-150458.svg) | ![Psycopg](https://img.shields.io/badge/Psycopg-3.1.0+-336791.svg) |
+| ![Requests](https://img.shields.io/badge/Requests-2.31.0+-22a55c.svg) | ![NumPy](https://img.shields.io/badge/NumPy-1.24.0+-013243.svg) | ![ChromaDB](https://img.shields.io/badge/ChromaDB-0.4.0+-6e44ff.svg) |
+| | ![SciPy](https://img.shields.io/badge/SciPy-1.10.0+-8a2be2.svg) | |
+| | ![yfinance](https://img.shields.io/badge/yfinance-0.2.18+-0071bd.svg) | |
+| | ![Statsmodels](https://img.shields.io/badge/Statsmodels-0.14.0+-800080.svg) | |
+
+| Scientific & Bio-Informatics | Document & Web Processing | Multimedia & UI |
+| :--- | :--- | :--- |
+| ![BioPython](https://img.shields.io/badge/BioPython-1.81-1e90ff.svg) | ![PyPDF2](https://img.shields.io/badge/PyPDF2-3.0.0+-ff0000.svg) | ![Pygame](https://img.shields.io/badge/Pygame-2.5.0+-6495ed.svg) |
+| ![Matplotlib](https://img.shields.io/badge/Matplotlib-3.7.0+-1f77b4.svg) | ![pdfplumber](https://img.shields.io/badge/pdfplumber-0.9.0+-d73b5b.svg) | ![Colorama](https://img.shields.io/badge/Colorama-0.4.6-2596be.svg) |
+| ![PrettyTable](https://img.shields.io/badge/PrettyTable-3.8.0+-db7093.svg) | ![python-docx](https://img.shields.io/badge/python--docx-0.8.11-2b74b9.svg) | |
+| ![ViennaRNA](https://img.shields.io/badge/ViennaRNA-2.6.4+-c71585.svg) | ![BeautifulSoup4](https://img.shields.io/badge/BS4-4.12.0-8a2be2.svg) | |
+| | ![lxml](https://img.shields.io/badge/lxml-4.9.0+-ec9134.svg) | |
+
+| Web & API Services | Communication | Utilities & Development |
+| :--- | :--- | :--- |
+| ![aiohttp](https://img.shields.io/badge/aiohttp-3.8.0+-2c6eb5.svg) | ![imaplib2](https://img.shields.io/badge/imaplib2-3.6-4682b4.svg) | ![python-dotenv](https://img.shields.io/badge/dotenv-1.0.0-2ca55c.svg) |
+| ![WebSockets](https://img.shields.io/badge/WebSockets-11.0.0+-1a1a1a.svg) | | ![tqdm](https://img.shields.io/badge/tqdm-4.65.0-34a853.svg) |
+| | | ![ratelimit](https://img.shields.io/badge/ratelimit-2.2.1-orange.svg) |
+| | | ![Black](https://img.shields.io/badge/Black-23.0.0-000000.svg) |
+| | | ![Flake8](https://img.shields.io/badge/Flake8-6.0.0-4b8bbe.svg) |
+| | | ![pytest](https://img.shields.io/badge/pytest-7.4.0-0a9edc.svg) |
 
 ### Environment Setup
 
@@ -681,6 +696,7 @@ OPSIIE_0_3_79_XP_Pastel/
 
 
 *OPSIIE represents the convergence of human creativity and artificial intelligence, pushing the boundaries of what's possible in human-machine collaboration. While others argue whether machines or mankind rule over the other, we are redefining reality by creating it. If you are interested in ARPA Corp. & ARPA Hellenic Logical Systems, our vision, mission, and approach, feel free to connect via input@arpacorp.net* 
+
 
 
 
