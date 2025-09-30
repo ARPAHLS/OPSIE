@@ -18,7 +18,7 @@
 
 | [🌟 Overview](#-overview) | [🚀 Skillware](#-key-skillware) | [🛠️ Setup](#️-installation--setup) | [🎮 Usage](#-usage-guide) | [🎭 Personality](#-personality--character) | [🔐 Security](#-security--access-control) | [🏗️ Architecture](#️-system-architecture) |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
-| [🚨 Troubleshooting](#-troubleshooting) | [🔮 Future](#-future-development) | [📄 License](#-license--legal) | [🤝 Contributing](#-contributing) | [🙏 Credits](#-acknowledgments) | [📖 Documentation](https://github.com/ARPAHLS/OPSIE/Documentation/) | [💬 arpa.chat](https://arpa.chat) |
+| [🚨 Troubleshooting](#-troubleshooting) | [🔮 Future](#-future-development) | [📄 License](#-license--legal) | [🤝 Contributing](#-contributing) | [🙏 Credits](#-acknowledgments) | [📖 Documentation](https://github.com/ARPAHLS/OPSIE/tree/main/documentation) | [💬 arpa.chat](https://arpa.chat) |
 
 ---
 
@@ -664,4 +664,5 @@ OPSIIE_0_3_79_XP_Pastel/
 
 
 *OPSIIE represents the convergence of human creativity and artificial intelligence, pushing the boundaries of what's possible in human-machine collaboration. While others argue whether machines or mankind rule over the other, we are redefining reality by creating it. If you are interested in ARPA Corp. & ARPA Hellenic Logical Systems, our vision, mission, and approach, feel free to connect via input@arpacorp.net* 
+
 
