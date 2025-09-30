@@ -52,8 +52,9 @@ Common OPSIIE errors and solutions.
 **Restricted Command**: R-Grade required, check ARPA ID in kun.py
 
 ## 📞 Support
-Email: opsiebyarpa@gmail.com
+Email: input@arpacorp.net
 
 ---
 
 **Quick troubleshooting reference.** 🔧
+
