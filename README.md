@@ -565,7 +565,7 @@ OPSIIE_0_3_79_XP_Pastel/
 
 ### **Privacy & Security**
 - **Data Protection**: All user data is encrypted and secured
-- **Privacy Policy**: User privacy is paramount
+- **Privacy Policy**: User privacy is paramount, thjs model does not send user data anywhere outside user devices
 - **Audit Trails**: Comprehensive logging for security
 - **Compliance**: GDPR and other privacy regulations
 
@@ -580,10 +580,10 @@ OPSIIE_0_3_79_XP_Pastel/
 - **Security**: Security review for all changes
 
 ### **Contact Information**
-- **Technical Support**: opsiebyarpa@gmail.com
+- **Technical Support**: input@arpacorp.net
 - **Bug Reports**: Include system logs and error details
 - **Feature Requests**: Detailed specification required
-- **Partnership Inquiries**: business@arpacorp.net
+- **Partnership Inquiries**: r1@arpacorp.net
 
 ---
 
@@ -721,5 +721,6 @@ OPSIIE_0_3_79_XP_Pastel/
 
 *"We move where life is gonna be, not where it was."*  
 *— Ross Peili, Main Human @ARPA Corp.*
+
 
 *OPSIIE represents the convergence of human creativity and artificial intelligence, pushing the boundaries of what's possible in human-machine collaboration.* 
