@@ -491,8 +491,9 @@ For memory system issues:
 - Check database connection with `/status`
 - Verify PostgreSQL is running
 - Review kun.py configuration
-- Contact: opsiebyarpa@gmail.com
+- Contact: input@arpacorp.net
 
 ---
+
 
 **The Mnemonic Matrix is the foundation of OPSIIE's long-term intelligence and personalization.** 🧠
