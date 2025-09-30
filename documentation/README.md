@@ -90,10 +90,11 @@ python OPSIIE_0_3_79_XP.py
 
 ## 📞 Support
 
-Email: opsiebyarpa@gmail.com
+Email: input@arpacorp.net
 
 ---
 
 **Intelligence meets personality.** ✨
 
 *ARPA Corporation*
+
