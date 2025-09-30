@@ -214,4 +214,5 @@ If you encounter issues:
 - Check the error logs
 - Verify all prerequisites are met
 - Review the troubleshooting section in README.md
-- Contact: opsiebyarpa@gmail.com
+
+- Contact: input@arpacorp.net
