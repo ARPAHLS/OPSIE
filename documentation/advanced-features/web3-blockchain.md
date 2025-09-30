@@ -193,4 +193,7 @@ AGENT_WALLET = {
 
 ---
 
+
 **Decentralized finance at your command.** 🔗
+
+**For an advanced self-sustainable version of Opsie's Web3 Capabilities, check [Hermes3 (H3)](https://github.com/arpahls/h3/) who specializes in Web3 Operations, can perform everything Opsie does in Web3 and more, and all in dynamic abstract NLP**
