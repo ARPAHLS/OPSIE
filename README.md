@@ -30,68 +30,18 @@ OPSIIE is designed to be more than just an AI assistant - it's a digital compani
 
 ## 🚀 Key Features
 
-### 🧠 **Intelligence & Memory**
-- **Mnemonic Matrix**: Long-term memory storage using PostgreSQL and ChromaDB
-- **Vector Database**: Semantic search and retrieval of past conversations
-- **Memory Recall**: Intelligent context retrieval based on conversation history
-- **Soul Signatures**: Personalized user profiles with unique interaction patterns
-
-### 🎭 **Multi-Modal AI Generation**
-- **Text Generation**: Powered by Ollama with Llama3 model
-- **Image Generation**: AI-powered image creation using FLUX and other models
-- **Video Generation**: Text-to-video synthesis with multiple model support
-- **Music Generation**: AI music composition using MusicGen
-- **Voice Interaction**: Full voice input/output with ElevenLabs integration
-
-### 🔐 **Security & Authentication**
-- **Facial Recognition**: Biometric authentication using face recognition
-- **Emotional State Detection**: Real-time emotion analysis during authentication
-- **ARPA ID System**: Multi-level access control (R-Grade Master, A-Grade Standard)
-- **Secure Database**: Encrypted PostgreSQL storage with user isolation
-
-### 🌐 **Web3 & Blockchain Integration**
-- **Multi-Chain Support**: Base, Ethereum, Polygon blockchain operations
-- **Token Trading**: Buy, sell, and transfer cryptocurrency tokens
-- **DEX Integration**: Automated market making and trading
-- **Wallet Management**: Secure key management and transaction signing
-
-### 📊 **Financial Intelligence**
-- **Market Analysis**: Real-time stock, crypto, and currency data
-- **Technical Analysis**: Advanced financial metrics and charts
-- **Portfolio Tracking**: Comprehensive investment monitoring
-- **News Integration**: Financial news aggregation and sentiment analysis
-
-### 🧬 **DNA Analysis System**
-- **GDDA (Genetic Due Diligence Analysis)**: Comprehensive DNA/RNA/Protein analysis
-- **Sequence Analysis**: Structure prediction, homology search, patent analysis
-- **Bioinformatics Tools**: Advanced molecular biology capabilities
-- **Research Integration**: Scientific literature and database cross-referencing
-
-### 🤖 **Agentic Network**
-- **Multi-Agent Collaboration**: Integration with Nyx, G1 Black, and Kronos agents
-- **Live Voice Conversations**: Real-time voice interactions with AI agents
-- **Room System**: Virtual collaboration spaces for complex problem-solving
-- **Specialized Expertise**: Domain-specific AI agents for different tasks
-
-### 📧 **Communication Hub**
-- **Email Management**: Send, receive, and manage emails
-- **Contact Integration**: Automatic contact mapping and management
-- **Multi-Recipient Support**: Send to multiple recipients simultaneously
-- **HTML Email Templates**: Professional email formatting with ARPA branding
-
-### 📁 **Document Intelligence**
-- **Multi-Format Support**: PDF, CSV, DOCX, TXT, XLSX file processing
-- **Content Analysis**: Intelligent document parsing and summarization
-- **Context Awareness**: Maintains file context for follow-up queries
-- **TAF-3000 File Manager**: Advanced document management system
-
-### 🎨 **User Interface & Experience**
-- **Dynamic Theme System**: Switch between Pastel and Vibrant color themes
-- **Real-time Theme Switching**: Change themes during conversation with `/theme`
-- **Voice Command Support**: "theme" voice command for hands-free switching
-- **Responsive Design**: Adaptive interface for different interaction modes
-
----
+| Category | Features |
+| :--- | :--- |
+| **🧠 Intelligence & Memory** | Mnemonic Matrix (PostgreSQL/ChromaDB), Vector Database, Intelligent Memory Recall, Personalized Soul Signatures. |
+| **🎭 Multi-Modal AI Generation** | Text (Ollama/Llama3), Image (FLUX), Video, Music (MusicGen), and Voice (ElevenLabs) generation. |
+| **🔐 Security & Authentication** | Facial Recognition, Emotional State Detection, ARPA ID System (R-Grade/A-Grade), Secure Encrypted Database. |
+| **🌐 Web3 & Blockchain Integration** | Multi-Chain Support (Base, ETH, Polygon), Token Trading, DEX Integration, Secure Wallet Management. |
+| **📊 Financial Intelligence** | Real-time Market Analysis (Stocks, Crypto), Technical Analysis, Portfolio Tracking, Financial News Integration. |
+| **🧬 DNA Analysis System** | GDDA (Genetic Due Diligence), Sequence Analysis, Bioinformatics Tools, Scientific Literature Cross-Referencing. |
+| **🤖 Agentic Network** | Multi-Agent Collaboration (Nyx, G1 Black, Kronos), Live Voice Conversations, Virtual Room System, Specialized Agents. |
+| **📧 Communication Hub** | Email Management, Automatic Contact Integration, Multi-Recipient Support, Professional HTML Templates. |
+| **📁 Document Intelligence** | Multi-Format Processing (PDF, DOCX, etc.), Content Analysis & Summarization, Context Awareness, TAF-3000 File Manager. |
+| **🎨 User Interface & Experience** | Dynamic Theme System (Pastel/Vibrant), Real-time Theme Switching (`/theme`), Voice Command Support, Responsive Design. |
 
 ## 🛠️ Installation & Setup
 
@@ -708,6 +658,7 @@ OPSIIE_0_3_79_XP_Pastel/
 
 
 *OPSIIE represents the convergence of human creativity and artificial intelligence, pushing the boundaries of what's possible in human-machine collaboration. While others argue whether machines or mankind rule over the other, we are redefining reality by creating it. If you are interested in ARPA Corp. & ARPA Hellenic Logical Systems, our vision, mission, and approach, feel free to connect via input@arpacorp.net* 
+
 
 
 
