@@ -29,7 +29,7 @@
   <a href="#-license--legal">📄 License</a> |
   <a href="#-contributing">🤝 Contributing</a> |
   <a href="#-acknowledgments">🙏 Credits</a> |
-  <a href="OPSIE/Documentation/">📖 Documentation</a> |
+  <a href="https://github.com/ARPAHLS/OPSIE/tree/main/documentation">📖 Documentation</a> |
   <a href="https://arpa.chat">💬 arpa.chat</a>
 </p>
 
@@ -696,6 +696,7 @@ OPSIIE_0_3_79_XP_Pastel/
 
 
 *OPSIIE represents the convergence of human creativity and artificial intelligence, pushing the boundaries of what's possible in human-machine collaboration. While others argue whether machines or mankind rule over the other, we are redefining reality by creating it. If you are interested in ARPA Corp. & ARPA Hellenic Logical Systems, our vision, mission, and approach, feel free to connect via input@arpacorp.net* 
+
 
 
 
