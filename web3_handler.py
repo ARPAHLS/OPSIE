@@ -1,4 +1,5 @@
 # web3.py
+# For the more advanced and self-sustainable version of the Web3 Handler with dynamic NLP execution, check: https://github.com/arpahls/hermes3
 
 import os
 import re
@@ -1978,4 +1979,5 @@ def main():
             print(f"{Fore.RED}[ERROR] {str(e)}{Style.RESET_ALL}")
 
 if __name__ == "__main__":
+
     main()
