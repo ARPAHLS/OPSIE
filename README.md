@@ -297,6 +297,9 @@ All commands support both text input and voice activation. When in voice mode, n
 /0x new chain avalanche 43114 https://api.avax.network/ext/bc/C/rpc
 ```
 For the more advanced and self-sustainable version of this web3 module, visit:
+
+| Project | Description |
+| :--- | :--- |
 | **[H3](https://github.com/arpahls/Hermes3/)** | Advanced Web3 AI Agent featuring dynamic parsing and multi-chain support for sophisticated blockchain interactions and real-time analytics. |
 
 #### **DNA Analysis**
@@ -698,6 +701,7 @@ OPSIIE_0_3_79_XP_Pastel/
 
 
 *OPSIIE represents the convergence of human creativity and artificial intelligence, pushing the boundaries of what's possible in human-machine collaboration. While others argue whether machines or mankind rule over the other, we are redefining reality by creating it. If you are interested in ARPA Corp. & ARPA Hellenic Logical Systems, our vision, mission, and approach, feel free to connect via input@arpacorp.net* 
+
 
 
 
