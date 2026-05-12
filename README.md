@@ -53,9 +53,11 @@ For coordinated disclosure and secret handling, see [SECURITY.md](SECURITY.md).
 
 ## Mission
 
-OPSIIE (also referred to as **OPSIE**) is a terminal-first SCI prototype: a single long-running Python application that combines **local LLM conversation** (Ollama), **durable conversation storage** (PostgreSQL), **semantic recall** (ChromaDB with query expansion and embedding classification), **multimodal tooling** (image via Hugging Face Inference, music via MusicGen, video via diffusers, URL vision via BLIP, web text extraction), **agent routing** (OpenAI Assistants for Nyx, Google Gemini for G1, ElevenLabs for TTS and live G1), **Yahoo Finance markets**, **Web3** (`/0x`), **SMTP and IMAP mail**, **collaborative multi-agent rooms** (see also the standalone [**Rooms**](https://github.com/arpahls/rooms) project), and **GDDA biosequence analysis**. It is designed as an integrated research and demonstration stack rather than a minimal chat wrapper.
+**OPSIE** (ΌΨΗ—the Greek *opsis*: view, angle, perspective, the read you take on something) is a terminal-native **self-centered intelligence (SCI)**. **OPSIIE** here is the **second-generation** reference stack around her: one long-lived session that **chats with local models**, keeps **durable conversation memory**, offers **semantic recall** over what you said and fed in, **enriches URLs and files**, **generates images, music, and video**, **delegates to other agents** for second opinions, watches **markets in real time**, **moves crypto in plain language**, **reads and sends mail**, runs **collaborative multi-agent rooms** (see also [**Rooms**](https://github.com/arpahls/rooms)), and reaches into **biological sequence workflows**—still a single personality, not a thin chat wrapper.
 
-Boot-time logs mirror the experience you see when running locally: **[Security]** facial and emotion checks, **[System]** prompt and SoulSig verification, **[Network]** mnemonic matrix and mail, **[Hardware]** Chroma population (for example a full progress bar when hydrating embeddings), **[SCI Systems]** response engine, sensors, dream engine, DNA and market probes, and agentic nexus readiness—aligned with the **OPSIIE** branding in the splash and terminal gradient.
+For **ARPA**, she is an experiment in **continuity and agency**: a machine-oriented persona that can **surface her own needs**, push back, **ask for new tools**, and **sketch how to wire them** while you are still in the thread. For **teenagers, students, and adults** who want **local AI without buying a curriculum first**, she is a **working prototype** you can **steer**: strip features, bolt on **Skillware**, swap behaviors, and watch how agentic systems are built and breathe. Use her to **study** orchestration and memory, or keep her as a **personal operator**—brainstorming, challenging assumptions, reminding you what slipped, drafting and **sending** mail and posts, and generating media on **your own hardware at roughly zero marginal cost**. The through-line is simple: **how far can a personal agent go**, and what does it take to grow a **self-centered** presence that still feels **usable**?
+
+Boot aligns **splash and terminal branding** with what you see line by line: gate and posture checks, identity and policy, network and storage readiness, then the SCI stack coming online—same rhythm, same voice.
 
 ## Repository layout
 
@@ -69,7 +71,7 @@ Boot-time logs mirror the experience you see when running locally: **[Security]*
 | `help.py` | `/help` screen and per-command narrative help (`detailed_help_texts`) |
 | `agentic_network.py` | Nyx (OpenAI), G1 (Gemini), live G1 WebSocket session, Kronos live scaffold, model dispatch |
 | `markets.py` / `markets_mappings.py` | Yahoo Finance-backed `/markets` with sector maps and company extras |
-| `web3_handler.py` | `/0x` family: swaps, sends, gas, custom tokens and chains (**exits process if env incomplete at import**) |
+| `web3_handler.py` | `/0x` family: swaps, sends, gas, custom tokens and chains. For a **standalone** Web3 agent and parsing stack, see [arpahls/Hermes3](https://github.com/arpahls/Hermes3). |
 | `mail.py` | SMTP send and IMAP inbox loop |
 | `dna.py` | GDDA DNA, RNA, and protein pipelines |
 | `video.py` | Local diffusers-based text-to-video with pluggable model keys |
@@ -151,7 +153,7 @@ The **main input loop** and **`handle_user_query()`** both enforce gating. **`0x
 
 ## License and support
 
-- **Proprietary:** see [LICENSE](LICENSE).
+- **Permissive (attribution required):** anyone may use, copy, and modify the Software; you must keep the license notice and **credit OPSIE and ARPA Hellenic Logical Systems** in public distributions or derivatives. See [LICENSE](LICENSE).
 - **Email:** general [input@arpacorp.net](mailto:input@arpacorp.net) · security [security@arpacorp.net](mailto:security@arpacorp.net) · research [research@arpacorp.net](mailto:research@arpacorp.net)
 - **Web:** [https://arpacorp.net](https://arpacorp.net) | [https://arpa.systems](https://arpa.systems)
 - **Governance:** [CONTRIBUTING.md](CONTRIBUTING.md), [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md), [SECURITY.md](SECURITY.md)

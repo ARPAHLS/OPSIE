@@ -43,4 +43,4 @@ Run the main entry only on machines you control and with credentials you own.
 
 ## Licensing
 
-Contributions to this proprietary repository are accepted only with explicit written permission from ARPA Hellenic Logical Systems unless otherwise stated in a separate agreement.
+Contributions are licensed under the same terms as [LICENSE](LICENSE): permissive use with **OPSIE** and **ARPA Hellenic Logical Systems** attribution. By submitting a pull request, you agree your contributed material is available under those terms unless you state otherwise clearly in the pull request description.
