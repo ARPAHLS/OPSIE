@@ -89,7 +89,7 @@ Boot-time logs mirror the experience you see when running locally: **[Security]*
 
 <div align="center">
 
-<img src="./docs/opsiie-splash.png" alt="OPSIIE splash" width="520" />
+<img src="./docs/opsiie-splash.png" alt="OPSIIE splash" width="100%" />
 
 </div>
 
