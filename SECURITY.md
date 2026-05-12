@@ -8,7 +8,7 @@ Security updates, when available, apply to the latest tagged revision in this re
 
 **Please do not file public issues for undisclosed vulnerabilities.**
 
-Email: [opsiebyarpa@gmail.com](mailto:opsiebyarpa@gmail.com)
+Email: [security@arpacorp.net](mailto:security@arpacorp.net)
 
 Include:
 

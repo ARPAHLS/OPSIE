@@ -1,21 +1,14 @@
 <div align="center">
 
-```
- ███             ███████    ███████████   █████████  █████ █████ ██████████
-░░░███         ███░░░░░███ ░░███░░░░░███ ███░░░░░███░░███ ░░███ ░░███░░░░░█
-  ░░░███      ███     ░░███ ░███    ░███░███    ░░░  ░███  ░███  ░███  █ ░ 
-    ░░░███   ░███      ░███ ░██████████ ░░█████████  ░███  ░███  ░██████   
-     ███░    ░███      ░███ ░███░░░░░░   ░░░░░░░░███ ░███  ░███  ░███░░█   
-   ███░      ░░███     ███  ░███         ███    ░███ ░███  ░███  ░███ ░   █
- ███░         ░░░███████░   █████       ░░█████████  █████ █████ ██████████
-░░░             ░░░░░░░    ░░░░░         ░░░░░░░░░  ░░░░░ ░░░░░ ░░░░░░░░░░ 
-```
-
 ### OPSIIE 0.3.80 XP
 
 **A Self-Centered Intelligence (SCI) Prototype**
 
-*By ARPA HELLENIC LOGICAL SYSTEMS · 03 Jul 2025 · Main entry `OPSIIE_0_3_80_XP.py`*
+<br />
+
+*By ARPA HELLENIC LOGICAL SYSTEMS · Dec 2023–May 2026 · Main entry `OPSIIE_0_3_80_XP.py`*
+
+<br />
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-bdd7ff?style=flat-square)](https://www.python.org/downloads/)
 [![Ollama](https://img.shields.io/badge/Ollama-0.3%2B-cfe8d6?style=flat-square)](https://ollama.com/)
@@ -25,6 +18,8 @@
 [![ChromaDB](https://img.shields.io/badge/ChromaDB-0.4%2B-bdd7ff?style=flat-square)](https://www.trychroma.com/)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%28primary%29-cfe8d6?style=flat-square)](https://www.microsoft.com/windows)
 [![ARPA](https://img.shields.io/badge/ARPA-Hellenic%20Logical%20Systems-e8d6ff?style=flat-square)](https://arpacorp.net)
+
+<br />
 
 OPSIE is a **terminal personality with agency and memory** that can act as a **daily driver assistant for technical work**: recall what you said last week, riff on files and URLs, spin up images or clips, pull market or chain data, draft and send mails, and run structured DNA workflows, all under **one session** and **your own infrastructure**. Slash commands, boot flow, and module layout are documented in [`docs/`](docs/README.md).
 
@@ -51,7 +46,6 @@ OPSIE is a **terminal personality with agency and memory** that can act as a **d
 | [**Hermes3**](https://github.com/arpahls/Hermes3) | Standalone, production-oriented **Web3** agent and parsing stack beyond the bundled `/0x` handler here. |
 | [**Gatekeeper**](https://github.com/arpahls/gatekeeper) | Standalone **facial recognition and emotion** gateway patterns (liveness, policy layers) instead of only the built-in boot gate. |
 | [**Rooms**](https://github.com/arpahls/rooms) | **Standalone multi-agent room runtime** and tooling when you want collaboration spaces decoupled from the OPSIIE monolith; the bundled `/room` command here is the in-session counterpart. |
-| [**vic_aisaq_demo**](https://github.com/arpahls/vic_aisaq_demo) | Reference demos around **VIC / AISAQ** style agent and evaluation flows. |
 
 For coordinated disclosure and secret handling, see [SECURITY.md](SECURITY.md).
 
@@ -158,7 +152,7 @@ The **main input loop** and **`handle_user_query()`** both enforce gating. **`0x
 ## License and support
 
 - **Proprietary:** see [LICENSE](LICENSE).
-- **Email:** [opsiebyarpa@gmail.com](mailto:opsiebyarpa@gmail.com)
+- **Email:** general [input@arpacorp.net](mailto:input@arpacorp.net) · security [security@arpacorp.net](mailto:security@arpacorp.net) · research [research@arpacorp.net](mailto:research@arpacorp.net)
 - **Web:** [https://arpacorp.net](https://arpacorp.net) | [https://arpa.systems](https://arpa.systems)
 - **Governance:** [CONTRIBUTING.md](CONTRIBUTING.md), [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md), [SECURITY.md](SECURITY.md)
 
@@ -166,9 +160,9 @@ The **main input loop** and **`handle_user_query()`** both enforce gating. **`0x
 
 <div align="center">
     <img src="https://raw.githubusercontent.com/ARPAHLS/.github/main/Group%202061.png" alt="ARPA Logo" width="50" />
-    <br/>
+    <br /><br />
     Built & Maintained by ARPA Hellenic Logical Systems & the Community
+    <br /><br />
+    <em>"We move where life is gonna be, not where it was."</em><br />
+    <em>— Ross Peili, Main Human @ ARPA Corp.</em>
 </div>
-
-*"We move where life is gonna be, not where it was."*  
-— Ross Peili, Main Human @ ARPA Corp.

@@ -123,7 +123,7 @@ def display_splash():
     print_opsiie_logo_gradient()
     print(pastel_green("""
         A Self-Centered Intelligence (SCI) Prototype 
-        By ARPA HELLENIC LOGICAL SYSTEMS | Version: 0.3.80 XP | 03 JUL 2025
+        By ARPA HELLENIC LOGICAL SYSTEMS | Version: 0.3.80 XP | 12 MAY 2026
     """))
     time.sleep(2)
 

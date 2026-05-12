@@ -161,7 +161,7 @@ def get_agent_intro(agent_name, room_prompt, user_name="User"):
 
 '''
 
-# 0.3.80 update 03 JUL 2025
+# 0.3.80 update 12 MAY 2026
 
 # new pastel color themes
 # new /0x command, which allows you to interact with the blockchain, includes old send and receive commands and new buy, sell, and trade commands.

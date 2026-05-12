@@ -1,5 +1,5 @@
 # ARPA Hellenic Logical Systems
-# https://arpacorp.net | https://arpa.systems | opsiebyarpa@gmail.com
+# https://arpacorp.net | https://arpa.systems | input@arpacorp.net
 #
 # Repository template: replace profile fields with your own data before running.
 # See docs/CONFIGURATION.md and kun.example.py for a fuller multi-user example.

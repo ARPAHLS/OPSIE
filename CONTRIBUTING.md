@@ -38,7 +38,7 @@ Run the main entry only on machines you control and with credentials you own.
 
 ## Communication
 
-- Technical contact: [opsiebyarpa@gmail.com](mailto:opsiebyarpa@gmail.com)
+- Technical contact: [input@arpacorp.net](mailto:input@arpacorp.net)
 - For security-sensitive reports, see [SECURITY.md](SECURITY.md).
 
 ## Licensing
