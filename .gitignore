@@ -1,0 +1,75 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE and OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Runtime audio scratch (repo root)
+output.mp3
+greeting.mp3
+
+# Generated outputs (default paths are under repo outputs/)
+outputs/images/
+outputs/music/
+outputs/videos/
+outputs/rooms/*.csv
+
+# Logs
+*.log
+logs/
+
+# Chroma / caches (if persisted to disk)
+chroma_data/
+.cache/
+
+# Model / weight caches (optional; large)
+.deepface/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Private keys and keystores
+*.pem
+*.key
+wallets/
+private_keys/
