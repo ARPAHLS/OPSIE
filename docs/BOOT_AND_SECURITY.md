@@ -31,7 +31,7 @@
 | 7 | `fetch_conversations()` sanity |
 | 8 | Ollama `llama3` probe |
 | 9 | Camera and microphone ambient calibration |
-| 10 | Construct `Web3Handler` if Base RPC responds |
+| 10 | Construct `Web3Handler` if Web3 env is complete and Base RPC responds; otherwise defer Web3 |
 | 11 | Mail credentials banner |
 | 12 | Dream engine CUDA or CPU banner |
 | 13 | DNA smoke, `yfinance` SPY probe, TAF-3000 banner |

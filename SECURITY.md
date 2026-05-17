@@ -26,7 +26,7 @@ Review these carefully before any internet-facing deployment:
 1. **Environment files:** `.env` must remain untracked. If credentials were ever committed, **rotate** them everywhere they were reused.
 2. **`kun.py`:** Contains database parameters, mail, wallet metadata, and soul signatures. Treat as **confidential** for production profiles.
 3. **`AGENT_PRIVATE_KEY`:** Grants on-chain asset control. Compromise is irreversible without key rotation and fund migration.
-4. **`web3_handler.py`:** Missing required Web3 variables causes **`exit()` at import time** (availability characteristic, not an access-control boundary).
+4. **`web3_handler.py`:** Missing required Web3 variables blocks Web3 commands at runtime, but non-Web3 startup can continue.
 5. **Biometric authentication:** Still-image face matching is not liveness-proof. DeepFace emotion classes are coarse heuristics, not clinical instrumentation. For a **standalone gateway** focused on facial recognition and emotion policy (and room to add liveness and service boundaries), evaluate **[Gatekeeper](https://github.com/arpahls/gatekeeper)** alongside this monolith’s in-process boot gate.
 6. **`/read`:** Resolves operator-supplied paths on the host. Only open paths you trust.
 7. **Hugging Face `/imagine`:** Requires `HUGGINGFACE_API_KEY` or `HF_TOKEN` in `.env`. Do not embed inference tokens in source.

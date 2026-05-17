@@ -22,13 +22,13 @@
 On `python OPSIIE_0_3_80_XP.py`:
 
 1. Heavy imports (`transformers`, `diffusers`, and others) run first.
-2. `sys.path` is adjusted, then **`load_dotenv()`** runs **before** `from web3_handler import Web3Handler` so `.env` is visible to the Web3 module during its import-time validation.
-3. `web3_handler` reads `AGENT_PRIVATE_KEY` and RPC URLs. If any are missing, it prints an error and calls **`exit()`** — the process never reaches splash.
+2. `sys.path` is adjusted, then **`load_dotenv()`** runs so `.env` values are available before runtime service checks.
+3. `web3_handler` is lazy-loaded only when Web3 is initialized or a Web3 command is used. Missing `AGENT_PRIVATE_KEY` or RPC URLs defer Web3 while allowing non-Web3 startup.
 4. Other submodules (`utils`, `kun`, `agentic_network`, `markets`, `help`, `mail`, `dna`, `room`, `video`) load according to the import block in the main file.
 
 ### Critical coupling: `web3_handler`
 
-Unlike branches that lazy-load Web3, **0.3.80 XP couples availability to import**. Plan `.env` staging before running, or maintain a private fork that guards the import. For a dedicated Web3 product line, see **[Hermes3](https://github.com/arpahls/Hermes3)**.
+`web3_handler` validates wallet and RPC environment variables when the handler is constructed. Non-Web3 features can boot without these values; `/0x` and related Web3 commands report the missing configuration when invoked. For a dedicated Web3 product line, see **[Hermes3](https://github.com/arpahls/Hermes3)**.
 
 ## Conversation state
 
