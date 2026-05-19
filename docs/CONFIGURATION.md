@@ -71,3 +71,9 @@ CREATE TABLE conversations (
 ```
 
 Repeat per-user databases as referenced in `kun.py`.
+### Ollama Configuration
+You can configure the models and host used by OPSIE for chat and embeddings via the `.env` file. If not set, OPSIE falls back to the default models.
+
+* `OLLAMA_MODEL`: The main chat model used for conversational streams and queries. (Default: `llama3`)
+* `OLLAMA_EMBED_MODEL`: The embedding model used for Chroma storage and retrieval. (Default: `nomic-embed-text`)
+* `OLLAMA_HOST`: The host URL for a remote Ollama instance. (Optional, Default: `http://localhost:11434` handled by the ollama client)

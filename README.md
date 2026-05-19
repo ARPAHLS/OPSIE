@@ -139,7 +139,7 @@ Session flow: **theme selection** → **splash** → **face and emotion gate** �
 
 ## Runtime dependencies
 
-- **Ollama:** `llama3` for chat and query expansion; `nomic-embed-text` for mnemonic embeddings (pull both in Ollama).
+- **Ollama:** `llama3` for chat and query expansion; `nomic-embed-text` for mnemonic embeddings by default. *(Note: You can configure custom models via the `.env` file. Make sure to pull your active models in Ollama).*
 - **PostgreSQL:** per-user `dbname` from the authenticated `kun.py` entry.
 - **ChromaDB:** in-process client; global collection name **`conversations`**; room sessions use separate collections.
 - **Optional and remote APIs:** OpenAI (Nyx), Google Generative AI (G1), ElevenLabs (TTS and live agents), Hugging Face Inference (default `/imagine`), Yahoo Finance, NCBI e-utilities (polite `NCBI_EMAIL`).
