@@ -130,6 +130,9 @@ client = chromadb.Client()
 vector_db = None
 
 AGENT_DISPLAY_NAMES = get_agent_display_names()
+OLLAMA_CHAT_MODEL = os.getenv("OLLAMA_MODEL", "llama3")
+OLLAMA_EMBED_MODEL = os.getenv("OLLAMA_EMBED_MODEL", "nomic-embed-text")
+OLLAMA_HOST = os.getenv("OLLAMA_HOST")
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 ORG_ID = os.getenv('ORG_ID')
 NYX_ASSISTANT_ID = os.getenv('NYX_ASSISTANT_ID')
@@ -781,7 +784,7 @@ def stream_response(prompt):
     global convo, agent_voice_active, voice_mode_active
     
     response = ''
-    stream = ollama.chat(model='llama3', messages=convo, stream=True)
+    stream = ollama.chat(model=OLLAMA_CHAT_MODEL, messages=convo, stream=True)
     
     # Print "OPSIE" prefix for every streamed chunk
     print(pastel_green('OPSIE:'), end=' ')
@@ -806,7 +809,7 @@ def stream_response(prompt):
 def stream_room_response(prompt, conversation):
     """Stream a response from the AI model for room interactions."""
     response = ''
-    stream = ollama.chat(model='llama3', messages=conversation, stream=True)
+    stream = ollama.chat(model=OLLAMA_CHAT_MODEL, messages=conversation, stream=True)
     
     for chunk in stream:
         content = chunk.get('message', {}).get('content', '')
@@ -1072,13 +1075,15 @@ def boot_up_sequence():
     time.sleep(2)
 
     # Step 5: Response Engine Initialization
-    print(pastel_yellow("[SCI Systems] Initializing OPSIE response engine ..."))
+    print(pastel_yellow(f"[SCI Systems] Initializing OPSIE response engine ({OLLAMA_CHAT_MODEL}) ..."))
     try:
         test_prompt = "Hello, Opsie. How are you?"
-        response = ollama.chat(model='llama3', messages=[{'role': 'user', 'content': test_prompt}])
+        response = ollama.chat(model=OLLAMA_CHAT_MODEL, messages=[{'role': 'user', 'content': test_prompt}])
         print(pastel_green("[SCI Systems] Response engine confidence: Trustworthy."))
     except Exception as e:
-        print(pastel_red(f"[Error] Opsie2 response engine initialization failed: {str(e)}"))
+        print(pastel_red(f"[Error] Opsie2 response engine initialization failed: Model '{OLLAMA_CHAT_MODEL}' not found or unreachable."))
+        print(pastel_yellow(f"Please run: ollama pull {OLLAMA_CHAT_MODEL}"))
+        print(pastel_red(f"Original exception: {str(e)}"))
         sys.exit()
     time.sleep(0.7)
 
@@ -1312,7 +1317,7 @@ def store_conversations(prompt, response):
 
     # Now, add to vector database using the global vector_db
     serialized_convo = f"prompt: {normalized_prompt} response: {normalized_response}"
-    response_embedding = ollama.embeddings(model='nomic-embed-text', prompt=serialized_convo)
+    response_embedding = ollama.embeddings(model=OLLAMA_EMBED_MODEL, prompt=serialized_convo)
     embedding = response_embedding['embedding']
 
     try:
@@ -1395,7 +1400,7 @@ def create_vector_db(conversations, vector_db=None):
         term_width = shutil.get_terminal_size((80, 20)).columns
         for i, c in enumerate(conversations):
             serialized_convo = f"prompt: {c['prompt']} response: {c['response']}"
-            response = ollama.embeddings(model='nomic-embed-text', prompt=serialized_convo)
+            response = ollama.embeddings(model=OLLAMA_EMBED_MODEL, prompt=serialized_convo)
             embedding = response['embedding']
 
             vector_db.add(
@@ -1427,7 +1432,7 @@ def retrieve_embeddings(queries, results_per_query=10):  # Increase the results 
     import shutil
     term_width = shutil.get_terminal_size((80, 20)).columns
     for i, query in enumerate(queries):
-        response = ollama.embeddings(model='nomic-embed-text', prompt=query)
+        response = ollama.embeddings(model=OLLAMA_EMBED_MODEL, prompt=query)
         query_embedding = response['embedding']
 
         results = vector_db.query(query_embeddings=[query_embedding], n_results=results_per_query)
@@ -1459,7 +1464,7 @@ def create_queries(prompt):
         {'role': 'user', 'content': prompt}
     ]
 
-    response = ollama.chat(model='llama3', messages=query_convo)
+    response = ollama.chat(model=OLLAMA_CHAT_MODEL, messages=query_convo)
     print(pastel_yellow(f'\nVector database queries: {response["message"]["content"]}\n'))
 
     response_content = response['message']['content']
@@ -1483,7 +1488,7 @@ def classify_embedding(query, context):
         {'role': 'assistant', 'content': 'no'},
     ]
 
-    response = ollama.chat(model='llama3', messages=classify_convo)
+    response = ollama.chat(model=OLLAMA_CHAT_MODEL, messages=classify_convo)
     return response['message']['content'].strip().lower()
 
 # *** Memory and Recall Section ***
@@ -1780,7 +1785,7 @@ def query_gpt_about_file(query, file_content):
 Based on this content, answer the following query: "{query}". Please ensure the answer is accurate and based on the file content, and it reflects Opsie's style of communication, avoiding template phrases like "An easy question!"."""
 
     # Call the GPT API (using Ollama or OpenAI)
-    response = ollama.chat(model='llama3', messages=[{'role': 'user', 'content': gpt_prompt}])
+    response = ollama.chat(model=OLLAMA_CHAT_MODEL, messages=[{'role': 'user', 'content': gpt_prompt}])
     
     # Return the response, without the templated intro
     return response['message']['content']
