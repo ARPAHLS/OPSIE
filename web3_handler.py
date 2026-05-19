@@ -20,10 +20,39 @@ BASE_RPC_URL = os.getenv("BASE_RPC_URL")
 ETHEREUM_RPC_URL = os.getenv("ETHEREUM_RPC_URL")
 POLYGON_RPC_URL = os.getenv("POLYGON_RPC_URL")
 
-# Error handling if environment variables are missing
-if not AGENT_PRIVATE_KEY or not BASE_RPC_URL or not ETHEREUM_RPC_URL or not POLYGON_RPC_URL:
-    print(Fore.RED + "Error: Missing environment variables. Check your .env file.")
-    exit()
+REQUIRED_WEB3_ENV_VARS = (
+    "AGENT_PRIVATE_KEY",
+    "BASE_RPC_URL",
+    "ETHEREUM_RPC_URL",
+    "POLYGON_RPC_URL",
+)
+
+
+def validate_web3_environment():
+    global AGENT_PRIVATE_KEY, BASE_RPC_URL, ETHEREUM_RPC_URL, POLYGON_RPC_URL
+
+    AGENT_PRIVATE_KEY = os.getenv("AGENT_PRIVATE_KEY")
+    BASE_RPC_URL = os.getenv("BASE_RPC_URL")
+    ETHEREUM_RPC_URL = os.getenv("ETHEREUM_RPC_URL")
+    POLYGON_RPC_URL = os.getenv("POLYGON_RPC_URL")
+
+    values = {
+        "AGENT_PRIVATE_KEY": AGENT_PRIVATE_KEY,
+        "BASE_RPC_URL": BASE_RPC_URL,
+        "ETHEREUM_RPC_URL": ETHEREUM_RPC_URL,
+        "POLYGON_RPC_URL": POLYGON_RPC_URL,
+    }
+    missing_env_vars = [name for name, value in values.items() if not value]
+    if missing_env_vars:
+        raise RuntimeError(
+            "Missing Web3 environment variables: "
+            + ", ".join(missing_env_vars)
+            + ". Set them before using Web3 commands."
+        )
+
+    CHAIN_INFO['Base']['rpc_url'] = BASE_RPC_URL
+    CHAIN_INFO['Ethereum']['rpc_url'] = ETHEREUM_RPC_URL
+    CHAIN_INFO['Polygon']['rpc_url'] = POLYGON_RPC_URL
 
 # Initialize Web3 Connections for multiple chains
 CHAIN_INFO = {
@@ -197,6 +226,8 @@ ROUTER_ABI = [
 class Web3Handler:
     def __init__(self, known_user_names):
         """Initialize Web3Handler with user data"""
+        validate_web3_environment()
+
         self.known_user_names = known_user_names
         self.web3_connection = None
         self.current_chain = None

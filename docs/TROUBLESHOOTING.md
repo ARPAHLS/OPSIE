@@ -1,12 +1,12 @@
 # Troubleshooting
 
-## Process exits immediately on import
+## Web3 commands report missing environment variables
 
-**Symptom:** Red message from `web3_handler.py` about missing environment variables.
+**Symptom:** `/0x` or `receive` reports missing Web3 environment variables.
 
-**Cause:** `AGENT_PRIVATE_KEY` or an RPC URL missing; the module calls `exit()` during import.
+**Cause:** `AGENT_PRIVATE_KEY` or an RPC URL is missing. Non-Web3 startup can continue, but Web3 commands require these values.
 
-**Mitigation:** Populate `.env` with valid placeholders for development machines, or maintain a private fork that lazy-imports Web3 after a feature flag.
+**Mitigation:** Populate `.env` with valid wallet and RPC values before using Web3 commands.
 
 ## Hugging Face `/imagine` errors
 
@@ -18,7 +18,7 @@
 
 ## `load_dotenv` ordering
 
-`load_dotenv()` is placed immediately before `from web3_handler import Web3Handler` so `.env` is visible during Web3 import validation.
+`load_dotenv()` runs before Web3 service checks so `.env` is visible when `Web3Handler` is constructed.
 
 ## Camera or microphone failures during boot
 

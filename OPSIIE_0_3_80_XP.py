@@ -72,8 +72,6 @@ from video import handle_video_command
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 load_dotenv()
 
-from web3_handler import Web3Handler
-
 #   ___ _    ___  ___   _   _    
 #  / __| |  / _ \| _ ) /_\ | |   
 # | (_ | |_| (_) | _ \/ _ \| |__ 
@@ -143,7 +141,40 @@ ELEVENLABS_API_KEY = os.getenv('ELEVENLABS_API_KEY')
 current_user = None
 call_name = None
 web3_connection = None
+web3_handler = None
 current_room = None
+
+WEB3_REQUIRED_ENV_VARS = (
+    "AGENT_PRIVATE_KEY",
+    "BASE_RPC_URL",
+    "ETHEREUM_RPC_URL",
+    "POLYGON_RPC_URL",
+)
+
+
+def get_missing_web3_env_vars():
+    return [name for name in WEB3_REQUIRED_ENV_VARS if not os.getenv(name)]
+
+
+def get_web3_handler():
+    global web3_handler
+    if web3_handler is not None:
+        return web3_handler
+
+    missing_env_vars = get_missing_web3_env_vars()
+    if missing_env_vars:
+        raise RuntimeError(
+            "Web3 is not configured. Set "
+            + ", ".join(missing_env_vars)
+            + " before using Web3 commands."
+        )
+
+    try:
+        from web3_handler import Web3Handler
+        web3_handler = Web3Handler(known_user_names)
+        return web3_handler
+    except Exception as e:
+        raise RuntimeError(f"Web3 initialization failed: {str(e)}") from e
 
 #Temporal Data Pocket for SoulSig 
 #(used as a security  measure during the wipe process)
@@ -1068,14 +1099,27 @@ def boot_up_sequence():
     time.sleep(0.5)
 
     # Step 7: Web3 Initialization
-    print(pastel_yellow("[Network] Initializing Web3 Handler ..."))
-    try:
-        web3 = Web3(Web3.HTTPProvider('https://mainnet.base.org'))
-        if web3.is_connected():
-            web3_handler = Web3Handler(known_user_names)
-    except Exception as e:
-        print(pastel_red(f"[Error] Web3 initialization failed: {str(e)}"))
+    print(pastel_yellow("[Network] Checking Web3 Handler ..."))
+    missing_env_vars = get_missing_web3_env_vars()
+    if missing_env_vars:
+        print(pastel_yellow(
+            "[Network] Web3 Handler deferred; missing: "
+            + ", ".join(missing_env_vars)
+            + "."
+        ))
         web3_handler = None
+    else:
+        try:
+            web3 = Web3(Web3.HTTPProvider(os.getenv("BASE_RPC_URL")))
+            if web3.is_connected():
+                web3_handler = get_web3_handler()
+                print(pastel_green("[Network] Web3 Handler: Ready."))
+            else:
+                print(pastel_yellow("[Network] Web3 Handler deferred; Base RPC did not respond."))
+                web3_handler = None
+        except Exception as e:
+            print(pastel_red(f"[Error] Web3 initialization failed: {str(e)}"))
+            web3_handler = None
     time.sleep(0.3)
 
     # Step 8: Mail Systems Check
@@ -2144,10 +2188,11 @@ def handle_user_query(prompt):
 
     if command == '0x':
         try:
+            handler = get_web3_handler()
             if prompt.lower().startswith('/0x gas'):
-                web3_handler.handle_gas_command(prompt)
+                handler.handle_gas_command(prompt)
             else:
-                web3_handler.handle_0x_command(prompt, agent_voice_active, voice_mode_active, speak_response)
+                handler.handle_0x_command(prompt, agent_voice_active, voice_mode_active, speak_response)
         except Exception as e:
             error_msg = f"Web3 command failed: {str(e)}"
             print(pastel_red(error_msg))
@@ -2158,7 +2203,8 @@ def handle_user_query(prompt):
         return
     elif command == 'receive':
         try:
-            web3_handler.handle_receive_command(current_user)
+            handler = get_web3_handler()
+            handler.handle_receive_command(current_user)
         except Exception as e:
             error_msg = f"Receive command failed: {str(e)}"
             print(pastel_red(error_msg))

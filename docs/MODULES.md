@@ -4,7 +4,7 @@
 
 **Responsibilities:** ANSI theme helpers; global state; splash; voice capture and speak; biometric authentication; `boot_up_sequence`; SQL and Chroma memory; `/recall` query expansion; BLIP and webpage enrichment; `/imagine`, `/music`; command router; main loop.
 
-**Key globals:** `convo`, `vector_db`, `file_context`, `current_room`, `webpage_char_limit`, voice flags, `web3_handler` (via import).
+**Key globals:** `convo`, `vector_db`, `file_context`, `current_room`, `webpage_char_limit`, voice flags, lazy `web3_handler`.
 
 **Note:** Duplicate function definitions exist (`toggle_voice_mode`, `load_custom_sounds`); Python uses the last binding in the file.
 

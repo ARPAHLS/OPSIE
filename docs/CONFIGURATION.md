@@ -2,7 +2,7 @@
 
 ## `.env` variables (aggregate)
 
-Loaded via `python-dotenv`. **`load_dotenv()`** is invoked in `OPSIIE_0_3_80_XP.py` **before** importing `web3_handler`. Template: **`.env.example`**.
+Loaded via `python-dotenv`. **`load_dotenv()`** is invoked in `OPSIIE_0_3_80_XP.py` before runtime service checks. Template: **`.env.example`**.
 
 | Variable | Consumed by | Purpose |
 |----------|-------------|---------|
@@ -15,8 +15,8 @@ Loaded via `python-dotenv`. **`load_dotenv()`** is invoked in `OPSIIE_0_3_80_XP.
 | `ELEVENLABS_API_KEY` | TTS, live agents, boot | Voice synthesis and sessions |
 | `VOICE_ID`, `NYX_VOICE_ID`, `G1_VOICE_ID` | Main file | Per persona TTS |
 | `HUGGINGFACE_API_KEY` or `HF_TOKEN` | `/imagine` | Hugging Face Inference bearer (**required for default image path**) |
-| `AGENT_PRIVATE_KEY` | `web3_handler` | Signing wallet (**import gate**) |
-| `BASE_RPC_URL`, `ETHEREUM_RPC_URL`, `POLYGON_RPC_URL` | `web3_handler` | RPC endpoints (**import gate**) |
+| `AGENT_PRIVATE_KEY` | `web3_handler` | Signing wallet for Web3 commands |
+| `BASE_RPC_URL`, `ETHEREUM_RPC_URL`, `POLYGON_RPC_URL` | `web3_handler` | RPC endpoints for Web3 commands |
 | `SENDER_EMAIL`, `SENDER_PASSWORD` | `mail.py` | SMTP and IMAP |
 | `NCBI_EMAIL` | `dna.py` | Entrez polite usage |
 
