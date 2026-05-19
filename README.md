@@ -109,7 +109,7 @@ python -m pip install -r requirements.txt
 
 ### 3. Configure
 
-1. Copy `.env.example` to `.env` and fill values. Web3 variables are **mandatory for import** (see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)).
+1. Copy `.env.example` to `.env` and fill values. Web3 variables can be left empty for non-Web3 startup, but **`/0x`** and **`receive`** require `AGENT_PRIVATE_KEY` plus the needed RPC URLs (see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)).
 2. Set **`HUGGINGFACE_API_KEY`** or **`HF_TOKEN`** for default `/imagine` (Hugging Face Inference API).
 3. Edit `kun.py`: replace the template `Demo Operator` profile with your `db_params`, `mail`, `arpa_id`, and paths. Add **`assets/enrollment.jpg`** (see [assets/README.txt](assets/README.txt)).
 4. Align optional **custom voice shortcut** media paths in `OPSIIE_0_3_80_XP.py` (`custom_words` dictionary) if you use MFCC hooks; defaults reference developer machine paths.
@@ -120,14 +120,14 @@ python -m pip install -r requirements.txt
 python OPSIIE_0_3_80_XP.py
 ```
 
-Session flow: **theme selection** → **splash** → **face and emotion gate** → **PostgreSQL and Chroma mnemonic checks** → **Ollama probe** → **sensor check** → **Web3 handler construction** → **mail check** → **dream engine probes** → **advanced analysis smoke** → **agentic network probe** → **optional five-second voice latch** → interactive loop.
+Session flow: **theme selection** → **splash** → **face and emotion gate** → **PostgreSQL and Chroma mnemonic checks** → **Ollama probe** → **sensor check** → **optional Web3 readiness check** → **mail check** → **dream engine probes** → **advanced analysis smoke** → **agentic network probe** → **optional five-second voice latch** → interactive loop.
 
 ## Documentation map
 
 | Document | Contents |
 |----------|----------|
 | [docs/COMMANDS.md](docs/COMMANDS.md) | Slash commands, subcommands, voice phrasing, dual dispatch notes, examples |
-| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Module graph, globals, Web3 import coupling, streaming path |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Module graph, globals, lazy Web3 startup, streaming path |
 | [docs/BOOT_AND_SECURITY.md](docs/BOOT_AND_SECURITY.md) | Boot stages, DeepFace policy, face match, `/status` behavior |
 | [docs/MEMORY_AND_RAG.md](docs/MEMORY_AND_RAG.md) | PostgreSQL schema, Chroma collection, recall and forget semantics |
 | [docs/VOICE.md](docs/VOICE.md) | `/voice`, `/voice1`, `/voice2`, ElevenLabs, Google STT, custom sounds |
