@@ -138,10 +138,11 @@ Colors are set in [labels.json](labels.json). Adjust in the GitHub UI if a label
 | Group | Example labels | Hex (no `#`) |
 |-------|----------------|--------------|
 | Kind | `bug` | `e8b4b4` |
-| Kind | `enhancement` | `b8e8c8` |
-| Kind | `documentation` | `b8d4e8` |
-| Area | `area:core` | `f5d0d0` |
-| Area | `area:voice` | `d0f0f5` |
+| Kind | `enhancement` | `b8d4e8` (former documentation blue) |
+| Kind | `documentation` | `f0e8c8` (same as `dependencies`, near triage) |
+| Kind | `good first issue` | `c8f030` (lime, high contrast) |
+| Kind | `help wanted` | `f5e020` (bright yellow) |
+| Area | all `area:*` | `d0f5f0` (shared; matches former `area:dna`) |
 | Workflow | `needs-triage` | `f0f0d8` |
 | Workflow | `confirmed` | `d8f0d8` |
 | Priority | `priority:high` | `f0b8b8` |
