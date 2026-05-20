@@ -156,7 +156,7 @@ The **main input loop** and **`handle_user_query()`** both enforce gating. **`0x
 - **Permissive (attribution required):** anyone may use, copy, and modify the Software; you must keep the license notice and **credit OPSIE and ARPA Hellenic Logical Systems** in public distributions or derivatives. See [LICENSE](LICENSE).
 - **Email:** general [input@arpacorp.net](mailto:input@arpacorp.net) · security [security@arpacorp.net](mailto:security@arpacorp.net) · research [research@arpacorp.net](mailto:research@arpacorp.net)
 - **Web:** [https://arpacorp.net](https://arpacorp.net) | [https://arpa.systems](https://arpa.systems)
-- **Governance:** [CONTRIBUTING.md](CONTRIBUTING.md), [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md), [SECURITY.md](SECURITY.md)
+- **Governance:** [CONTRIBUTING.md](CONTRIBUTING.md) (issues, labels, PRs), [.github/LABELS.md](.github/LABELS.md), [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md), [SECURITY.md](SECURITY.md)
 
 ---
 

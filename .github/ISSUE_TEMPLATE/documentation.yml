@@ -1,0 +1,91 @@
+name: Documentation
+description: Improvements to README, docs/, help text, or contributor guidance
+title: "[Docs] "
+labels:
+  - documentation
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Report missing, unclear, or outdated documentation for OPSIE.
+
+        For **code behavior bugs**, use **Bug report** instead. For **new features**, use **Feature request**.
+
+  - type: textarea
+    attributes:
+      label: Summary
+      description: What is wrong or missing in the docs?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: doc_location
+    attributes:
+      label: Documentation location
+      options:
+        - README.md (repository root)
+        - docs/README.md or docs index
+        - docs/COMMANDS.md
+        - docs/ARCHITECTURE.md
+        - docs/BOOT_AND_SECURITY.md
+        - docs/MEMORY_AND_RAG.md
+        - docs/VOICE.md
+        - docs/CONFIGURATION.md
+        - docs/MODULES.md
+        - docs/PROMPTS_AND_SOULSIG.md
+        - docs/TROUBLESHOOTING.md
+        - CONTRIBUTING.md / SECURITY.md / CODE_OF_CONDUCT.md
+        - help.py (in-app /help text)
+        - .env.example or kun.example.py comments
+        - Other (describe below)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: primary_area
+    attributes:
+      label: Related OPSIE area
+      description: Which subsystem the documentation describes
+      options:
+        - "area:core — Main entry, router, boot"
+        - "area:boot-auth — Gate, kun, access"
+        - "area:memory — Postgres, Chroma, recall"
+        - "area:terminal — Themes, help, commands"
+        - "area:persona — Prompts, Soul Signature"
+        - "area:config — Environment, kun templates"
+        - "area:agentic — External agents"
+        - "area:markets — Markets"
+        - "area:web3 — Web3"
+        - "area:mail — Mail"
+        - "area:dna — DNA"
+        - "area:genai — Generative media"
+        - "area:rooms — Rooms"
+        - "area:voice — Voice"
+        - "Cross-cutting / multiple areas"
+        - "Other / unsure"
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Current state
+      description: What the docs say now (or that a section is missing)
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Desired state
+      description: What readers should understand after the fix
+    validations:
+      required: true
+
+  - type: checkboxes
+    attributes:
+      label: Checklist
+      options:
+        - label: I am willing to open a pull request for this doc change (optional)
+          required: false
+        - label: I searched existing issues for duplicate documentation requests
+          required: true
