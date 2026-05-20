@@ -153,15 +153,16 @@ Colors are set in [labels.json](labels.json). Adjust in the GitHub UI if a label
 
 **Automatic (after merge to `main`):**
 
-1. Merge a PR that includes `.github/labels.json`.
-2. Workflow **Sync GitHub labels** runs on push, or run it manually: **Actions** → **Sync GitHub labels** → **Run workflow**.
+1. Merge a PR that includes `.github/labels.json` (or workflow changes).
+2. Workflow **Sync GitHub labels** runs on push, or run it manually: **Actions** → **Sync GitHub labels** → **Run workflow** → branch **`main`**.
 
-**Manual (first time or without Actions):**
+The workflow uses the GitHub API to **create and update** labels (including **color** changes). Re-run after editing colors in `labels.json`.
 
-1. Open **Issues** → **Labels** → **New label**.
-2. Create each entry from [labels.json](labels.json) (name, description, color).
+**Manual (without Actions):**
 
-`delete-other-labels` is **false** — existing labels not listed in `labels.json` are kept.
+1. Open **Issues** → **Labels** → edit each label, or use `gh label edit <name> --color <hex> --description "..."`.
+
+Labels not listed in `labels.json` are kept (nothing is deleted).
 
 ---
 
