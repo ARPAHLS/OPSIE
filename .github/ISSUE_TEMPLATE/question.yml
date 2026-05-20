@@ -1,0 +1,67 @@
+name: Question
+description: Ask about setup, expected behavior, or design (not a bug or feature request yet)
+title: "[Question] "
+labels:
+  - question
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ask a focused question about OPSIE setup, commands, or architecture.
+
+        If you found a **defect**, use **Bug report**. If you want **new behavior**, use **Feature request**.
+
+  - type: textarea
+    attributes:
+      label: Question
+      description: What do you need to understand?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: primary_area
+    attributes:
+      label: Related area
+      options:
+        - "area:core — Main entry, boot, router"
+        - "area:boot-auth — Gate, kun, access"
+        - "area:memory — Postgres, Chroma"
+        - "area:terminal — Themes, help, commands"
+        - "area:persona — Prompts, Soul Signature"
+        - "area:config — .env, kun, prerequisites"
+        - "area:agentic — /ask, external models"
+        - "area:markets — /markets"
+        - "area:web3 — /0x"
+        - "area:mail — /mail"
+        - "area:dna — /dna"
+        - "area:genai — /imagine, /music, /video"
+        - "area:rooms — /room"
+        - "area:voice — Voice modes"
+        - "dependencies — Ollama, Chroma, PostgreSQL versions"
+        - "Other / unsure"
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: What you tried
+      description: Commands run, docs read, error messages (redact secrets)
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Environment
+      description: OS, Python, Ollama models if relevant
+    validations:
+      required: false
+
+  - type: checkboxes
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues and docs under docs/
+          required: true
+        - label: I did not include secrets in this question
+          required: true

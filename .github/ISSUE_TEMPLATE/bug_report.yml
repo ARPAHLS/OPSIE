@@ -1,0 +1,143 @@
+name: Bug report
+description: Something is broken, regressed, or behaves incorrectly
+title: "[Bug] "
+labels:
+  - bug
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a defect in OPSIE 0.3.80 XP.
+
+        **Option A (light filing):** pick one **primary area** below. A maintainer will add the matching `area:*` label during triage.
+
+        Do **not** paste API keys, `AGENT_PRIVATE_KEY`, database passwords, production `kun.py`, or enrollment images.
+
+  - type: textarea
+    attributes:
+      label: Summary
+      description: One or two sentences describing the problem
+      placeholder: "Boot fails after Chroma mnemonic check with..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: primary_area
+    attributes:
+      label: Primary area
+      description: Where the issue most likely lives (one primary area per issue)
+      options:
+        - "area:core — Main entry, router, boot, streaming (OPSIIE_0_3_80_XP.py)"
+        - "area:boot-auth — Biometric gate, kun.py, arpa_id access, /status"
+        - "area:memory — PostgreSQL, Chroma, /recall, /forget, /memorize"
+        - "area:terminal — Themes, help.py, slash command UX"
+        - "area:persona — System prompt, Soul Signature, behavior text"
+        - "area:config — .env, kun.example.py, configuration docs"
+        - "area:agentic — agentic_network.py, /ask, live agents"
+        - "area:markets — markets.py, /markets"
+        - "area:web3 — web3_handler.py, /0x, receive"
+        - "area:mail — mail.py, /mail"
+        - "area:dna — dna.py, /dna"
+        - "area:genai — /imagine, /music, video.py, /video"
+        - "area:rooms — room.py, /room, session exports"
+        - "area:voice — /voice*, TTS/STT, system sounds"
+        - "Other / unsure"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: secondary_area
+    attributes:
+      label: Also affects (optional)
+      description: Second area only if the fix clearly spans two subsystems; leave None otherwise
+      options:
+        - "None"
+        - "area:core — Main entry, router, boot, streaming"
+        - "area:boot-auth — Gate, kun, access tiers"
+        - "area:memory — Postgres, Chroma, recall"
+        - "area:terminal — Themes, help, commands UX"
+        - "area:persona — Prompts, Soul Signature"
+        - "area:config — Environment and kun templates"
+        - "area:agentic — External model agents"
+        - "area:markets — Market data stack"
+        - "area:web3 — On-chain handler"
+        - "area:mail — Mail send/inbox"
+        - "area:dna — Sequence workflows"
+        - "area:genai — Image, music, video generation"
+        - "area:rooms — Multi-agent room"
+        - "area:voice — Voice and sounds"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: access_tier
+    attributes:
+      label: Access tier (if relevant)
+      description: Master-only commands include /ask, /markets, /dna, /0x when arpa_id does not start with R
+      options:
+        - Not applicable
+        - Master (arpa_id starts with R)
+        - Standard (non-master)
+        - Unknown
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Component / file paths
+      description: Comma-separated paths if known
+      placeholder: "OPSIIE_0_3_80_XP.py, web3_handler.py"
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Environment
+      description: OS, Python version, Ollama models, GPU, PostgreSQL/Chroma versions if known
+      placeholder: |
+        OS: Windows 11
+        Python: 3.11
+        Ollama: llama3, nomic-embed-text
+        GPU: yes / no
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps from a clean or typical session start
+      placeholder: |
+        1. python OPSIIE_0_3_80_XP.py
+        2. Pass gate as ...
+        3. Run /command ...
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Logs or terminal output
+      description: Paste relevant stderr or tracebacks in a fenced code block; redact secrets
+    validations:
+      required: false
+
+  - type: checkboxes
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing open and closed issues for duplicates
+          required: true
+        - label: I removed secrets, keys, and personal kun.py data from this report
+          required: true

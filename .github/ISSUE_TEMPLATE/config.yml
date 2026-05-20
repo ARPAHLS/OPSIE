@@ -1,0 +1,12 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: Report a security vulnerability (coordinated disclosure)
+    url: https://github.com/ARPAHLS/OPSIE/blob/main/SECURITY.md
+    about: >
+      Do not post undisclosed vulnerabilities, API keys, private keys, or production
+      kun.py contents in public issues. Email security@arpacorp.net per SECURITY.md.
+
+  - name: ARPA technical contact
+    url: mailto:input@arpacorp.net
+    about: General questions about contributing or using OPSIE outside of a GitHub issue.

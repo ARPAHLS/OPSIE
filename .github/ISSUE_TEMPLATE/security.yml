@@ -1,0 +1,88 @@
+name: Security
+description: Security weakness, exposure, or unsafe default (read SECURITY.md first)
+title: "[Security] "
+labels:
+  - security
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Coordinated disclosure:** For undisclosed vulnerabilities with live exploit risk, email
+        [security@arpacorp.net](mailto:security@arpacorp.net) per [SECURITY.md](../../SECURITY.md)
+        instead of posting exploit details publicly.
+
+        Use this template only for **public tracking** of already-disclosed items, documentation
+        gaps in the security policy, or **non-sensitive** hardening suggestions.
+
+        Never include API keys, `AGENT_PRIVATE_KEY`, database passwords, or production `kun.py`.
+
+  - type: textarea
+    attributes:
+      label: Summary
+      description: High-level description without exploit payloads or live secrets
+    validations:
+      required: true
+
+  - type: dropdown
+    id: primary_area
+    attributes:
+      label: Affected area
+      options:
+        - "area:boot-auth — Biometric gate, kun, access control"
+        - "area:web3 — Keys, RPC, swaps, wallets"
+        - "area:config — .env, secrets handling"
+        - "area:memory — Data retention, recall, Chroma"
+        - "area:mail — SMTP/IMAP exposure"
+        - "area:core — Main entry, file read paths, command router"
+        - "area:agentic — Remote API clients"
+        - "area:genai — External inference APIs"
+        - "area:voice — Microphone, TTS, third-party voice APIs"
+        - "area:rooms — Multi-agent session data"
+        - "Infrastructure / supply chain — dependencies, CI"
+        - "Other / unsure"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Estimated severity (reporter view)
+      options:
+        - Critical — likely exploitable with serious impact in default dev setup
+        - High — exploitable with configuration many operators use
+        - Medium — requires unlikely configuration or physical access
+        - Low — defense in depth or documentation gap
+        - Unknown
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Impact
+      description: Who or what is affected (funds, data, host filesystem, biometric data, mail)
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Steps to reproduce (sanitized)
+      description: High-level reproduction only; no keys or live endpoints with secrets
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Suggested mitigation
+      description: Configuration, code, or documentation changes you recommend
+    validations:
+      required: false
+
+  - type: checkboxes
+    attributes:
+      label: Checklist
+      options:
+        - label: I read SECURITY.md and did not paste undisclosed exploit material
+          required: true
+        - label: I will use security@arpacorp.net for sensitive undisclosed reports
+          required: true

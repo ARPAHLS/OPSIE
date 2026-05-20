@@ -1,0 +1,23 @@
+name: Sync GitHub labels
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/labels.json
+
+permissions:
+  issues: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync labels from .github/labels.json
+        uses: EndBug/label-sync@v2
+        with:
+          config-file: .github/labels.json
+          delete-other-labels: false
+          token: ${{ secrets.GITHUB_TOKEN }}

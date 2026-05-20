@@ -1,0 +1,106 @@
+name: Maintenance
+description: Refactor, dependencies, testing, CI, or repository structure (no new user-facing feature)
+title: "[Maintenance] "
+labels:
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Track structural work: refactors, dependency pins, test harness, `.github` workflows, or
+        non-feature cleanup.
+
+        Maintainers will add **`refactor`**, **`infrastructure`**, **`dependencies`**, or
+        **`testing`** after triage. Pick the **primary area** the work touches.
+
+  - type: textarea
+    attributes:
+      label: Summary
+      description: What should change and why (behavior should stay the same unless noted)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: work_type
+    attributes:
+      label: Nature of work (informational)
+      description: Maintainers apply the matching kind label during triage
+      options:
+        - Refactor — same intended behavior, cleaner structure
+        - Infrastructure — CI/CD, .github, repo layout
+        - Dependencies — requirements.txt, Ollama/Chroma/Postgres tooling
+        - Testing — pytest, smoke paths, coverage
+        - Mixed / unsure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: primary_area
+    attributes:
+      label: Primary area
+      options:
+        - "area:core — Main entry, router, boot"
+        - "area:boot-auth — Gate, kun, access"
+        - "area:memory — Postgres, Chroma"
+        - "area:terminal — Themes, help"
+        - "area:persona — utils, prompts"
+        - "area:config — Environment templates"
+        - "area:agentic — agentic_network"
+        - "area:markets — markets stack"
+        - "area:web3 — web3_handler"
+        - "area:mail — mail"
+        - "area:dna — dna"
+        - "area:genai — video and media modules"
+        - "area:rooms — room.py"
+        - "area:voice — voice paths"
+        - "Infrastructure / .github only"
+        - "Cross-cutting / multiple modules"
+        - "Other / unsure"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: secondary_area
+    attributes:
+      label: Also affects (optional)
+      options:
+        - "None"
+        - "area:core"
+        - "area:boot-auth"
+        - "area:memory"
+        - "area:terminal"
+        - "area:persona"
+        - "area:config"
+        - "area:agentic"
+        - "area:markets"
+        - "area:web3"
+        - "area:mail"
+        - "area:dna"
+        - "area:genai"
+        - "area:rooms"
+        - "area:voice"
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Scope and files
+      description: Paths or modules in scope; link to parent epic if applicable (e.g. #20)
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Risks or breaking changes
+      description: Import paths, operator setup, or command behavior risks
+    validations:
+      required: false
+
+  - type: checkboxes
+    attributes:
+      label: Checklist
+      options:
+        - label: I explained why this is maintenance rather than a feature request
+          required: true
+        - label: I searched existing issues for overlapping refactors
+          required: true
