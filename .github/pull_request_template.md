@@ -1,26 +1,33 @@
-<!-- Agents: fill every section below. Use "Fixes #N" when the PR closes an issue. Keep secrets out of the diff. -->
+<!--
+  Agents: fill every section. Use "Fixes #N" when this PR closes an issue;
+  use "Relates to #N" otherwise. No secrets, kun.py, or enrollment images.
+-->
 
-Fixes #
+## Related issues
+
+<!-- Example: Fixes #21 -->
 
 ## Summary
 
-<!-- 1–3 sentences: what changed and why. -->
+<!-- What changed and why (1–3 sentences). -->
 
 ## Type
 
-<!-- One of: bugfix | docs | feature | refactor | security | ci -->
+<!-- One value: bugfix | docs | feature | refactor | security | ci -->
 
 ## Area
 
-<!-- Primary label area if applicable, e.g. area:core — or "n/a" for repo-only changes -->
+<!-- One value: area:core | area:voice | area:web3 | … (see .github/LABELS.md) or n/a -->
 
 ## Testing
 
-<!-- What you ran, or "not run" with reason. -->
+<!-- Commands run, or "not run" with reason. -->
 
 ## Security
 
-<!-- "None" or one line on Web3 / biometric / mail / network / file-read impact. -->
+<!-- "None" or one line (Web3, biometric, mail, network, file-read). -->
+
+## Checklist
 
 - [ ] No secrets, `kun.py` profiles, or enrollment images in the diff
 - [ ] Docs updated if behavior or env vars changed (otherwise n/a)

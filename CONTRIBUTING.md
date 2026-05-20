@@ -50,7 +50,7 @@ Run the main entry only on machines you control and with credentials you own.
 
 ## Pull requests
 
-New PRs use a short [.github/pull_request_template.md](.github/pull_request_template.md) (`Fixes #`, summary, type, area, testing, security). Agents and humans should keep it brief and link the issue they implement.
+New PRs use a short [.github/pull_request_template.md](.github/pull_request_template.md) (related issues, summary, type, area, testing, security, checklist). Agents and humans should keep it brief; use `Fixes #N` when the PR closes an issue.
 
 ## Pull request checklist
 
