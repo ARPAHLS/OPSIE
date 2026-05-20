@@ -6,7 +6,7 @@
   },
   {
     "name": "documentation",
-    "color": "b8d4e8",
+    "color": "f0e8c8",
     "description": "Improvements or additions to documentation"
   },
   {
@@ -16,17 +16,17 @@
   },
   {
     "name": "enhancement",
-    "color": "b8e8c8",
+    "color": "b8d4e8",
     "description": "New feature or capability"
   },
   {
     "name": "good first issue",
-    "color": "d4c8f0",
+    "color": "c8f030",
     "description": "Suitable for newcomers"
   },
   {
     "name": "help wanted",
-    "color": "c8e0d8",
+    "color": "f5e020",
     "description": "Extra attention or design input is needed"
   },
   {
@@ -71,52 +71,52 @@
   },
   {
     "name": "area:core",
-    "color": "f5d0d0",
+    "color": "d0f5f0",
     "description": "Main entry, command router, boot orchestration, streaming chat, globals"
   },
   {
     "name": "area:boot-auth",
-    "color": "f5e0d0",
+    "color": "d0f5f0",
     "description": "Biometric gate, kun.py profiles, arpa_id access tiers, /status reboot"
   },
   {
     "name": "area:memory",
-    "color": "d0e8f5",
+    "color": "d0f5f0",
     "description": "PostgreSQL, ChromaDB, /recall, /forget, /memorize, mnemonic embeddings"
   },
   {
     "name": "area:terminal",
-    "color": "d0f5e8",
+    "color": "d0f5f0",
     "description": "terminal_colors.py, help.py, themes, slash command UX"
   },
   {
     "name": "area:persona",
-    "color": "e8d0f5",
+    "color": "d0f5f0",
     "description": "System prompt, Soul Signature, persona and behavior text in utils.py"
   },
   {
     "name": "area:config",
-    "color": "f5f0d0",
+    "color": "d0f5f0",
     "description": ".env, kun.example.py, configuration and onboarding docs"
   },
   {
     "name": "area:agentic",
-    "color": "d0d8f5",
+    "color": "d0f5f0",
     "description": "agentic_network.py, /ask, Nyx, G1, live agent sessions"
   },
   {
     "name": "area:markets",
-    "color": "d8f5e0",
+    "color": "d0f5f0",
     "description": "markets.py, markets_mappings.py, /markets and Yahoo Finance panels"
   },
   {
     "name": "area:web3",
-    "color": "f5ecd0",
+    "color": "d0f5f0",
     "description": "web3_handler.py, /0x, receive, swaps, chains, wallets"
   },
   {
     "name": "area:mail",
-    "color": "f5d0e8",
+    "color": "d0f5f0",
     "description": "mail.py, SMTP send, IMAP inbox, /mail"
   },
   {
@@ -126,17 +126,17 @@
   },
   {
     "name": "area:genai",
-    "color": "f5e8d0",
+    "color": "d0f5f0",
     "description": "/imagine, /music, video.py, /video, generative media pipelines"
   },
   {
     "name": "area:rooms",
-    "color": "e0d0f5",
+    "color": "d0f5f0",
     "description": "room.py, /room, Chroma session logs, outputs/rooms exports"
   },
   {
     "name": "area:voice",
-    "color": "d0f0f5",
+    "color": "d0f5f0",
     "description": "/voice, /voice1, /voice2, TTS/STT, system sounds, ElevenLabs paths"
   },
   {
