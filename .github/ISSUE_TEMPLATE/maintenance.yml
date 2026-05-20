@@ -80,7 +80,7 @@ body:
         - "area:rooms"
         - "area:voice"
     validations:
-      required: true
+      required: false
 
   - type: textarea
     attributes:
