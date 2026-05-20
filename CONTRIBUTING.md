@@ -2,6 +2,8 @@
 
 Thank you for helping improve OPSIE documentation and code quality.
 
+**AI agents:** read [docs/AI_NATIVE_GUIDE.md](docs/AI_NATIVE_GUIDE.md) for a staged workflow (plan, implement, verify, PR) and OPSIE-specific safety rules before you edit the repository.
+
 ## Principles
 
 - **Scope control:** Open pull requests that address one concern (documentation versus feature versus refactor) so review stays tractable.
@@ -50,7 +52,7 @@ Run the main entry only on machines you control and with credentials you own.
 
 ## Pull requests
 
-New PRs use a short [.github/pull_request_template.md](.github/pull_request_template.md) (related issues, summary, type, area, testing, security, checklist). Agents and humans should keep it brief; use `Fixes #N` when the PR closes an issue.
+New PRs use a short [.github/pull_request_template.md](.github/pull_request_template.md) (related issues, summary, type, area, testing, security, checklist). Agents should follow [AI_NATIVE_GUIDE.md](docs/AI_NATIVE_GUIDE.md) stages 6–7. Use `Fixes #N` when the PR closes an issue.
 
 ## Pull request checklist
 

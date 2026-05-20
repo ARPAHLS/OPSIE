@@ -13,5 +13,6 @@ This folder expands topics that would overcrowd the root [`README.md`](../README
 | [MODULES.md](MODULES.md) | Python module responsibilities |
 | [PROMPTS_AND_SOULSIG.md](PROMPTS_AND_SOULSIG.md) | System prompt and Soul Signature |
 | [TROUBLESHOOTING.md](TROUBLESHOOTING.md) | Common failures |
+| [AI_NATIVE_GUIDE.md](AI_NATIVE_GUIDE.md) | Guide for AI agents contributing via fork and PR |
 
-The repository root [`README.md`](../README.md) is the primary entry for GitHub and local clones.
+The repository root [`README.md`](../README.md) is the primary entry for GitHub and local clones. Human and agent contributors should also read [`CONTRIBUTING.md`](../CONTRIBUTING.md).
