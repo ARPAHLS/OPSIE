@@ -50,9 +50,9 @@ body:
     id: secondary_area
     attributes:
       label: Also affects (optional)
-      description: Second area only if the fix clearly spans two subsystems; leave None otherwise
+      description: Second area only if the fix clearly spans two subsystems; choose Not applicable otherwise
       options:
-        - "None"
+        - "Not applicable"
         - "area:core — Main entry, router, boot, streaming"
         - "area:boot-auth — Gate, kun, access tiers"
         - "area:memory — Postgres, Chroma, recall"
