@@ -29,7 +29,7 @@ Keys include: `recall`, `forget`, `memorize`, `ask`, `markets`, `dna`, `0x`, `re
 ### `/recall <keyword>`
 
 1. Expands text into search queries via Ollama (`create_queries`).
-2. Embeds queries with `nomic-embed-text`, queries Chroma `conversations`, classifies hits (`classify_embedding`), merges snippets into `convo`, then **streams** a new reply.
+2. Embeds queries with the configured embedding model, queries Chroma conversations, classifies hits (classify_embedding), merges snippets into convo, then streams a new reply.
 
 Implemented in **both** the main loop and `handle_user_query` with the same high-level pattern.
 

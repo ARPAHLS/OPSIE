@@ -10,7 +10,7 @@
          ┌────────────────────┼────────────────────┐
          ▼                    ▼                    ▼
    PostgreSQL            ChromaDB              Ollama
- (conversations)    (embeddings nomic)    (llama3, embed)
+ (conversations)    (configured embed model)   (configured models)
          │                    │                    │
          └──────────┬─────────┴────────────────────┘
                     ▼
@@ -56,7 +56,7 @@ All other lines, including slash commands not listed above, route to **`handle_u
 
 ## Streaming path
 
-`stream_response` calls `ollama.chat(model='llama3', messages=convo, stream=True)`, prints `OPSIE:` with pastel styling, then `store_conversations` persists to PostgreSQL and Chroma. Optional ElevenLabs playback runs when voice flags are active.
+`stream_response` calls `ollama.chat()` using the configured chat model (defaults to `llama3`), prints `OPSIE:` with pastel styling, then `store_conversations` persists to PostgreSQL and Chroma using the configured embedding model. Optional ElevenLabs playback runs when voice flags are active.
 
 ## Room architecture
 
