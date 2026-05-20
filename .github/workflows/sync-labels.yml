@@ -15,6 +15,9 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Sync labels from .github/labels.json
         uses: EndBug/label-sync@v2
         with:
