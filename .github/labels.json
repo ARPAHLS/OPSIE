@@ -1,0 +1,167 @@
+[
+  {
+    "name": "bug",
+    "color": "e8b4b4",
+    "description": "Something is not working as intended"
+  },
+  {
+    "name": "documentation",
+    "color": "b8d4e8",
+    "description": "Improvements or additions to documentation"
+  },
+  {
+    "name": "duplicate",
+    "color": "d4d4d4",
+    "description": "This issue or pull request already exists"
+  },
+  {
+    "name": "enhancement",
+    "color": "b8e8c8",
+    "description": "New feature or capability"
+  },
+  {
+    "name": "good first issue",
+    "color": "d4c8f0",
+    "description": "Suitable for newcomers"
+  },
+  {
+    "name": "help wanted",
+    "color": "c8e0d8",
+    "description": "Extra attention or design input is needed"
+  },
+  {
+    "name": "invalid",
+    "color": "e8e0b8",
+    "description": "Not actionable or off-scope"
+  },
+  {
+    "name": "question",
+    "color": "f0d4e8",
+    "description": "Further information or discussion is needed"
+  },
+  {
+    "name": "wontfix",
+    "color": "e8e8e8",
+    "description": "This will not be worked on"
+  },
+  {
+    "name": "security",
+    "color": "f0c8b8",
+    "description": "Security-related report; see SECURITY.md for coordinated disclosure"
+  },
+  {
+    "name": "refactor",
+    "color": "d8d0f0",
+    "description": "Structural change without changing intended behavior"
+  },
+  {
+    "name": "infrastructure",
+    "color": "c8d8e8",
+    "description": "CI/CD, .github, repository layout, or automation"
+  },
+  {
+    "name": "dependencies",
+    "color": "f0e8c8",
+    "description": "requirements.txt, Ollama, Chroma, PostgreSQL, or toolchain versions"
+  },
+  {
+    "name": "testing",
+    "color": "d0f0e0",
+    "description": "pytest, smoke paths, or test harness work"
+  },
+  {
+    "name": "area:core",
+    "color": "f5d0d0",
+    "description": "Main entry, command router, boot orchestration, streaming chat, globals"
+  },
+  {
+    "name": "area:boot-auth",
+    "color": "f5e0d0",
+    "description": "Biometric gate, kun.py profiles, arpa_id access tiers, /status reboot"
+  },
+  {
+    "name": "area:memory",
+    "color": "d0e8f5",
+    "description": "PostgreSQL, ChromaDB, /recall, /forget, /memorize, mnemonic embeddings"
+  },
+  {
+    "name": "area:terminal",
+    "color": "d0f5e8",
+    "description": "terminal_colors.py, help.py, themes, slash command UX"
+  },
+  {
+    "name": "area:persona",
+    "color": "e8d0f5",
+    "description": "System prompt, Soul Signature, persona and behavior text in utils.py"
+  },
+  {
+    "name": "area:config",
+    "color": "f5f0d0",
+    "description": ".env, kun.example.py, configuration and onboarding docs"
+  },
+  {
+    "name": "area:agentic",
+    "color": "d0d8f5",
+    "description": "agentic_network.py, /ask, Nyx, G1, live agent sessions"
+  },
+  {
+    "name": "area:markets",
+    "color": "d8f5e0",
+    "description": "markets.py, markets_mappings.py, /markets and Yahoo Finance panels"
+  },
+  {
+    "name": "area:web3",
+    "color": "f5ecd0",
+    "description": "web3_handler.py, /0x, receive, swaps, chains, wallets"
+  },
+  {
+    "name": "area:mail",
+    "color": "f5d0e8",
+    "description": "mail.py, SMTP send, IMAP inbox, /mail"
+  },
+  {
+    "name": "area:dna",
+    "color": "d0f5f0",
+    "description": "dna.py, GDDA workflows, /dna, NCBI tooling"
+  },
+  {
+    "name": "area:genai",
+    "color": "f5e8d0",
+    "description": "/imagine, /music, video.py, /video, generative media pipelines"
+  },
+  {
+    "name": "area:rooms",
+    "color": "e0d0f5",
+    "description": "room.py, /room, Chroma session logs, outputs/rooms exports"
+  },
+  {
+    "name": "area:voice",
+    "color": "d0f0f5",
+    "description": "/voice, /voice1, /voice2, TTS/STT, system sounds, ElevenLabs paths"
+  },
+  {
+    "name": "needs-triage",
+    "color": "f0f0d8",
+    "description": "New issue; maintainer has not confirmed area and scope yet"
+  },
+  {
+    "name": "confirmed",
+    "color": "d8f0d8",
+    "description": "Reproduction or scope accepted; ready for implementation"
+  },
+  {
+    "name": "blocked",
+    "color": "f0d8d8",
+    "description": "Waiting on dependency, decision, or external input"
+  },
+  {
+    "name": "priority:high",
+    "color": "f0b8b8",
+    "description": "Urgent for the next patch or release (maintainers only)"
+  },
+  {
+    "name": "priority:low",
+    "color": "d8e8f0",
+    "description": "Backlog or nice-to-have (maintainers only)"
+  }
+]

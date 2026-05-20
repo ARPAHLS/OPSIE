@@ -1,12 +1,31 @@
 # Contributing
 
-Thank you for helping improve OPSIIE documentation and code quality.
+Thank you for helping improve OPSIE documentation and code quality.
 
 ## Principles
 
 - **Scope control:** Open pull requests that address one concern (documentation versus feature versus refactor) so review stays tractable.
 - **Security first:** Never commit live API keys, Web3 private keys, database passwords, biometric enrollment photos, or production `kun.py` profiles. Use `.env` and local-only assets.
 - **Reproducibility:** When behavior changes, update the matching section in `README.md` or under `docs/`.
+
+## Issues and labels
+
+We use **Option A** triage: reporters pick a template and one **primary area**; maintainers add matching `area:*` labels and move `needs-triage` to `confirmed`.
+
+| I want to… | Template |
+|------------|----------|
+| Report broken behavior | **Bug report** |
+| Propose new behavior | **Feature request** |
+| Fix README or `docs/` | **Documentation** |
+| Discuss setup or design | **Question** |
+| Security (public tracking only) | **Security** — see [SECURITY.md](SECURITY.md) for undisclosed reports |
+| Refactor, CI, deps, tests | **Maintenance** |
+
+- Full label rules: [.github/LABELS.md](.github/LABELS.md)
+- Blank issues are disabled; use a template or the security contact link in [config.yml](.github/ISSUE_TEMPLATE/config.yml)
+- After merge to `main`, labels sync from [.github/labels.json](.github/labels.json) via the **Sync GitHub labels** workflow (or create labels manually from that file on first setup)
+
+**Do not** paste secrets in issues. **Do not** set `priority:high` or `priority:low` on your own issue unless a maintainer asks you to.
 
 ## Development setup
 
@@ -29,10 +48,15 @@ Run the main entry only on machines you control and with credentials you own.
 
 `pytest` appears in `requirements.txt`. Automated coverage is minimal today. If you add tests, place them under `tests/` and document how to invoke them in the pull request.
 
+## Pull requests
+
+New PRs use a short [.github/pull_request_template.md](.github/pull_request_template.md) (`Fixes #`, summary, type, area, testing, security). Agents and humans should keep it brief and link the issue they implement.
+
 ## Pull request checklist
 
 - [ ] No secrets or personal data in the diff
 - [ ] Documentation updated when commands or environment variables change
+- [ ] Primary `area:*` noted in the PR description when the change is subsystem-specific
 - [ ] Smoke run: import chain or boot reaches the interactive loop on a development machine
 - [ ] For security-relevant edits, describe risk surface (Web3, network, biometric, mail)
 
