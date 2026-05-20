@@ -47,7 +47,7 @@ body:
     attributes:
       label: Also affects (optional)
       options:
-        - "None"
+        - "Not applicable"
         - "area:core — Main entry, router, boot, streaming"
         - "area:boot-auth — Gate, kun, access tiers"
         - "area:memory — Postgres, Chroma, recall"
