@@ -132,7 +132,6 @@ vector_db = None
 AGENT_DISPLAY_NAMES = get_agent_display_names()
 OLLAMA_CHAT_MODEL = os.getenv("OLLAMA_MODEL", "llama3")
 OLLAMA_EMBED_MODEL = os.getenv("OLLAMA_EMBED_MODEL", "nomic-embed-text")
-OLLAMA_HOST = os.getenv("OLLAMA_HOST")
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 ORG_ID = os.getenv('ORG_ID')
 NYX_ASSISTANT_ID = os.getenv('NYX_ASSISTANT_ID')

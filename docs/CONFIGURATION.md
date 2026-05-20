@@ -76,4 +76,4 @@ You can configure the models and host used by OPSIE for chat and embeddings via 
 
 * `OLLAMA_MODEL`: The main chat model used for conversational streams and queries. (Default: `llama3`)
 * `OLLAMA_EMBED_MODEL`: The embedding model used for Chroma storage and retrieval. (Default: `nomic-embed-text`)
-* `OLLAMA_HOST`: The host URL for a remote Ollama instance. (Optional, Default: `http://localhost:11434` handled by the ollama client)
+* `OLLAMA_HOST`: The host URL for a remote Ollama instance. (Must remain in the `.env` file so the Ollama SDK automatically picks it up from the environment. Default: `http://localhost:11434`)
