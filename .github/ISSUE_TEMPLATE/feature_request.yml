@@ -63,7 +63,7 @@ body:
         - "area:rooms — Multi-agent room"
         - "area:voice — Voice and sounds"
     validations:
-      required: true
+      required: false
 
   - type: dropdown
     id: access_tier
