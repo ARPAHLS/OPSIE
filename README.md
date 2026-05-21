@@ -93,7 +93,7 @@ Boot aligns **splash and terminal branding** with what you see line by line: gat
 
 - **Python 3.8+** (GPU strongly recommended for `/music` and `/video`)
 - **PostgreSQL 14+** with a `conversations` table in each database referenced by `kun.py` (see [docs/CONFIGURATION.md](docs/CONFIGURATION.md))
-- **Ollama** **0.3+** with **`llama3`** and **`nomic-embed-text`** available locally
+- **Ollama** **0.3+** with your configured models available locally (defaults to **llama3** and **nomic-embed-text**, configurable via `.env`)
 - **ChromaDB** **0.4+** (via `pip` / `requirements.txt`; in-process client in the stock build)
 - **Camera and microphone** for default authentication and voice paths
 - **Windows** is the primary tested platform; paths in optional voice assets may use drive letters
