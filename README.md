@@ -93,7 +93,7 @@ Boot aligns **splash and terminal branding** with what you see line by line: gat
 
 - **Python 3.8+** (GPU strongly recommended for `/music` and `/video`)
 - **PostgreSQL 14+** with a `conversations` table in each database referenced by `kun.py` (see [docs/CONFIGURATION.md](docs/CONFIGURATION.md))
-- **Ollama** **0.3+** with **`llama3`** and **`nomic-embed-text`** available locally
+- **Ollama** **0.3+** with your configured models available locally (defaults to **llama3** and **nomic-embed-text**, configurable via `.env`)
 - **ChromaDB** **0.4+** (via `pip` / `requirements.txt`; in-process client in the stock build)
 - **Camera and microphone** for default authentication and voice paths
 - **Windows** is the primary tested platform; paths in optional voice assets may use drive letters
@@ -140,7 +140,7 @@ Session flow: **theme selection** → **splash** → **face and emotion gate** �
 
 ## Runtime dependencies
 
-- **Ollama:** `llama3` for chat and query expansion; `nomic-embed-text` for mnemonic embeddings (pull both in Ollama).
+- **Ollama:** `llama3` for chat and query expansion; `nomic-embed-text` for mnemonic embeddings by default. *(Note: You can configure custom models via the `.env` file. Make sure to pull your active models in Ollama).*
 - **PostgreSQL:** per-user `dbname` from the authenticated `kun.py` entry.
 - **ChromaDB:** in-process client; global collection name **`conversations`**; room sessions use separate collections.
 - **Optional and remote APIs:** OpenAI (Nyx), Google Generative AI (G1), ElevenLabs (TTS and live agents), Hugging Face Inference (default `/imagine`), Yahoo Finance, NCBI e-utilities (polite `NCBI_EMAIL`).

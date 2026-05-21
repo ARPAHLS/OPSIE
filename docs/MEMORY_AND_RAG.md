@@ -23,11 +23,11 @@ The code issues selects and inserts against **`conversations`** with columns inc
 
 ### Hydration
 
-If the collection is empty but SQL has rows, `create_vector_db` embeds historical rows using Ollama **`nomic-embed-text`**.
+If the collection is empty but SQL has rows, create_vector_db embeds historical rows using the configured embedding model.
 
 ## Recall pipeline (`/recall`)
 
-1. **`create_queries(prompt)`** — Asks `llama3` for a Python-parseable list of search strings; `ast.literal_eval` parses with fallback.
+1. **`create_queries(prompt)`** — Asks the configured chat model for a Python-parseable list of search strings; ast.literal_eval parses with fallback.
 2. **`retrieve_embeddings`** — Embeds each query, queries Chroma, applies **`classify_embedding`** gating.
 3. Accepted snippets become a `Retrieved memory:` system message; **`stream_response`** runs on the recall text.
 

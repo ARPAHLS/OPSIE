@@ -29,7 +29,7 @@
 | 5 | Append `soul_sig` lines into `system_prompt` |
 | 6 | `ensure_vector_db_exists()` for global `conversations` collection |
 | 7 | `fetch_conversations()` sanity |
-| 8 | Ollama `llama3` probe |
+| 8 | Ollama configured chat model probe |
 | 9 | Camera and microphone ambient calibration |
 | 10 | Construct `Web3Handler` if Web3 env is complete and Base RPC responds; otherwise defer Web3 |
 | 11 | Mail credentials banner |

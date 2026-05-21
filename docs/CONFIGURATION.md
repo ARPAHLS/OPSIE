@@ -19,6 +19,9 @@ Loaded via `python-dotenv`. **`load_dotenv()`** is invoked in `OPSIIE_0_3_80_XP.
 | `BASE_RPC_URL`, `ETHEREUM_RPC_URL`, `POLYGON_RPC_URL` | `web3_handler` | RPC endpoints for Web3 commands |
 | `SENDER_EMAIL`, `SENDER_PASSWORD` | `mail.py` | SMTP and IMAP |
 | `NCBI_EMAIL` | `dna.py` | Entrez polite usage |
+| `OLLAMA_MODEL` | Main file | Chat and query expansion model (default: `llama3`) |
+| `OLLAMA_EMBED_MODEL` | Main file | Embedding model (default: `nomic-embed-text`) |
+| `OLLAMA_HOST` | Ollama SDK | Remote Ollama instance URL. Must remain in `.env` (default: `http://localhost:11434`) |
 
 Global `DB_NAME` style variables in `.env.example` are **documentation helpers**; live connections use **`kun.py` `db_params`** for the authenticated user.
 
@@ -71,3 +74,5 @@ CREATE TABLE conversations (
 ```
 
 Repeat per-user databases as referenced in `kun.py`.
+### Ollama Configuration
+You can configure the models and host used by OPSIE for chat and embeddings via the `.env` file. If not set, OPSIE falls back to the default models.
