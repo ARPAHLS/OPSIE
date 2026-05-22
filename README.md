@@ -1,6 +1,6 @@
 <div align="center">
 
-### OPSIIE 0.3.80 XP
+### ΌΨΗ | OPSIE
 
 **A Self-Centered Intelligence (SCI) Prototype**
 
@@ -12,12 +12,15 @@
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-bdd7ff?style=flat-square)](https://www.python.org/downloads/)
 [![Ollama](https://img.shields.io/badge/Ollama-0.3%2B-cfe8d6?style=flat-square)](https://ollama.com/)
+[![License](https://img.shields.io/badge/License-Permissive-cfe8d6?style=flat-square)](LICENSE)
+
+**Runtime dependencies**
+
 [![Llama 3](https://img.shields.io/badge/Chat-llama3-f4d7ff?style=flat-square)](https://ollama.com/library/llama3)
 [![nomic-embed-text](https://img.shields.io/badge/Embed-nomic--embed--text-f8e7c9?style=flat-square)](https://ollama.com/library/nomic-embed-text)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14%2B-e8d6ff?style=flat-square)](https://www.postgresql.org/)
 [![ChromaDB](https://img.shields.io/badge/ChromaDB-0.4%2B-bdd7ff?style=flat-square)](https://www.trychroma.com/)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%28primary%29-cfe8d6?style=flat-square)](https://www.microsoft.com/windows)
-[![ARPA](https://img.shields.io/badge/ARPA-Hellenic%20Logical%20Systems-e8d6ff?style=flat-square)](https://arpacorp.net)
 
 <br />
 
